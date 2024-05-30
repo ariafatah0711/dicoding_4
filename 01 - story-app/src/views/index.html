@@ -1,173 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title><%= htmlWebpackPlugin.options.title %> | Money Tracker App</title>
-  </head>
-  <body>
-    <header>
-      <nav class="navbar navbar-expand-md navbar-dark bg-primary">
-        <div class="container">
-          <span class="navbar-brand"><%= brandName %></span>
 
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>
+    <%= htmlWebpackPlugin.options.title %> | PicStory
+  </title>
+</head>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent"><%= navLinks %></div>
-        </div>
-      </nav>
-    </header>
-
-    <main>
-      <div class="main-content">
-        <div class="container py-5">
-          <h1 class="mb-3">Dashboard</h1>
-
-          <!-- Card Information -->
-          <div class="row mb-5 g-3">
-            <div class="col-12 col-sm-6 col-lg-4">
-              <div class="card h-100 bg-primary text-bg-primary bg-gradient">
-                <div class="card-body">
-                  <h1 class="card-title fs-2">
-                    <span id="numberOfTransactions">0</span> Transaksi<br />
-                    <span class="fs-5">Bulan ini</span>
-                  </h1>
-                  <p class="card-text"></p>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-4">
-              <div class="card h-100 bg-success text-bg-success bg-gradient">
-                <div class="card-body">
-                  <h1 class="card-title fs-2">
-                    Rp <span id="amountIncome">0</span><br />
-                    <span class="fs-5">Total pemasukan</span>
-                  </h1>
-                  <p class="card-text"></p>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-sm-12 col-lg-4">
-              <div class="card h-100 bg-warning text-bg-warning bg-gradient">
-                <div class="card-body">
-                  <h1 class="card-title fs-2">
-                    Rp <span id="amountExpense">0</span><br />
-                    <span class="fs-5">Total pengeluaran</span>
-                  </h1>
-                  <p class="card-text"></p>
-                </div>
-              </div>
-            </div>
+<body>
+  <header-app class="sticky-top">
+    <nav class="navbar bg-body-tertiary px-5">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="./favicon.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+          <%= brandName %>
+        </a>
+        <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end d-md-none p-3 text-center" tabindex="-1" id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+              <%= brandName %>
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
-
-          <!-- Records -->
-          <div>
-            <div class="d-flex justify-content-between align-items-center">
-              <h1>Riwayat Transaksi</h1>
-              <a class="btn btn-primary text-capitalize" href="transactions/add.html">
-                <i class="bi bi-plus-lg me-1"></i>Tambah Transaksi
+          <div class="offcanvas-body d-lg-block">
+            <ul class="nav justify-content-end row">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Beranda</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Tambah Cerita</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  profile
+                </a>
+                <ul class="dropdown-menu w-100 ms-auto">
+                  <li><a class="dropdown-item" href="#">Dasbord</a></li>
+                  <li><a class="dropdown-item" href="#">Setting</a></li>
+                  <li><a class="dropdown-item" href="#">Account</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="#">Keluar</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Nav items for larger screens -->
+        <div class="collapse d-none d-md-flex flex-row ms-auto ">
+          <ul class="navbar-nav container-fluid flex-row gap-5">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Tambah Cerita</a>
+            </li>
+            <li class="nav-item dropdown pe-5">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Profile
               </a>
-            </div>
+              <ul class="dropdown-menu position-absolute">
+                <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                <li><a class="dropdown-item" href="#">Setting</a></li>
+                <li><a class="dropdown-item" href="#">Account</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Keluar</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header-app>
 
-            <div class="row mt-3">
-              <div class="col">
-                <table class="table table-sm table-bordered" id="recordsTable">
-                  <thead>
-                    <tr>
-                      <th class="text-center">No</th>
-                      <th class="text-center">Tipe</th>
-                      <th class="text-center">Nama</th>
-                      <th class="text-center">Jumlah</th>
-                      <th class="text-center">Tanggal</th>
-                      <th class="text-center">Aksi</th>
-                    </tr>
-                  </thead>
-                  <tbody></tbody>
-                </table>
+  <main class="container-fluid flex w-100">
+    <hero>
+      <img src="./image/hero.jpg" class="rounded mx-auto d-block" style="max-width: 10rem;" alt="...">
+    </hero>
+    <main-app class="container-fluid w-100 p-auto px-5">
+      <h1 class="text-center">aku ingin denger cerita kamu hari ini</h1>
+      <post-list>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card h-100">
+              <img src="./image/example.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                  content. This content is a little bit longer.</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-body-secondary">Last updated 3 mins ago</small>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img src="./image/example.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a short card.</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-body-secondary">Last updated 3 mins ago</small>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img src="./image/example.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                  content.</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-body-secondary">Last updated 3 mins ago</small>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img src="./image/example.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                  content. This content is a little bit longer.</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-body-secondary">Last updated 3 mins ago</small>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </main>
+      </post-list>
+    </main-app>
+  </main>
 
-    <footer>
-      <div class="main-footer bg-dark">
-        <div class="container px-3 py-4"><%= footerContent %></div>
-      </div>
-    </footer>
+  <footer-app>
 
-    <div
-      class="modal fade"
-      id="recordDetailModal"
-      data-bs-backdrop="static"
-      data-bs-keyboard="false"
-      tabindex="-1"
-      aria-labelledby="staticBackdropLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-scrollable">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">Rincian Transaksi</h1>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <div class="mb-3">
-              <img src="" id="imgDetailRecord" class="img-fluid" alt="Evidence of transaction" />
-            </div>
+  </footer-app>
+</body>
 
-            <h2>Rincian Transaksi</h2>
-            <table>
-              <tbody>
-                <tr>
-                  <td class="fw-bold">Tipe</td>
-                  <td class="fw-bold ms-3 me-1 d-inline-block">:</td>
-                  <td id="typeDetailRecord"></td>
-                </tr>
-                <tr>
-                  <td class="fw-bold">Nama</td>
-                  <td class="fw-bold ms-3 me-1 d-inline-block">:</td>
-                  <td id="nameDetailRecord"></td>
-                </tr>
-                <tr>
-                  <td class="fw-bold">Tanggal</td>
-                  <td class="fw-bold ms-3 me-1 d-inline-block">:</td>
-                  <td id="dateDetailRecord"></td>
-                </tr>
-                <tr>
-                  <td class="fw-bold">Jumlah Uang</td>
-                  <td class="fw-bold ms-3 me-1 d-inline-block">:</td>
-                  <td id="amountDetailRecord"></td>
-                </tr>
-                <tr>
-                  <td class="fw-bold">Catatan</td>
-                  <td class="fw-bold ms-3 me-1 d-inline-block">:</td>
-                  <td id="noteDetailRecord"></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
 </html>

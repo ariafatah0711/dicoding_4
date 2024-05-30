@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:prod": "webpack --config webpack.prod.js",
+    "build:dev": "webpack serve --config webpack.dev.js",
+    "prettier:check": "prettier --check .",
+    "prettier:format": "prettier --write ."
   },
   "keywords": [],
   "author": "your_name <your_email>",
@@ -15,7 +19,7 @@
     "babel-loader": "9.1.0",
     "clean-webpack-plugin": "4.0.0",
     "copy-webpack-plugin": "11.0.0",
-    "css-loader": "6.7.2",
+    "css-loader": "^6.7.2",
     "html-webpack-plugin": "5.5.0",
     "postcss-loader": "7.0.1",
     "sass": "1.56.1",
@@ -28,6 +32,8 @@
   },
   "dependencies": {
     "@popperjs/core": "2.11.6",
-    "bootstrap": "5.2.2"
+    "bootstrap": "^5.3.2",
+    "bootstrap-icons": "^1.11.0",
+    "lit": "3.1.3"
   }
 }
