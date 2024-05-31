@@ -4,8 +4,10 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:prod": "webpack --config webpack.prod.js",
     "build:dev": "webpack serve --config webpack.dev.js",
+    "build:prod": "webpack --config webpack.prod.js",
+    "build:start": "npm run build:prod && npm run serve",
+    "serve": "http-server dist --port 9000",
     "prettier:check": "prettier --check .",
     "prettier:format": "prettier --write ."
   },
@@ -34,6 +36,7 @@
     "@popperjs/core": "2.11.6",
     "bootstrap": "^5.3.2",
     "bootstrap-icons": "^1.11.0",
+    "date-fns": "^3.6.0",
     "lit": "3.1.3"
   }
 }
