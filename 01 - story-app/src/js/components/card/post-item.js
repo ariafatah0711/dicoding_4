@@ -7,6 +7,7 @@ class PostItem extends LitWithoutShadowDom {
     img: { type: String, reflect: true },
     description: { type: String, reflect: true },
     date: { type: String, reflect: true },
+    datePostAgo: { type: String, reflect: true },
   };
 
   constructor() {
@@ -22,8 +23,12 @@ class PostItem extends LitWithoutShadowDom {
           <h5 class="card-title">${this.name}</h5>
           <p class="card-text">${this.description}</p>
         </div>
-        <div class="card-footer">
-          <small class="text-body-secondary">${this.date}</small>
+        <div class="card-footer d-flex justify-content-between">
+          <small class="text-body-secondary">${this.datePostAgo}</small>
+          <div>
+            <i class="bi bi-calendar-check"></i>
+            <small class="text-body-secondary"> ${this.date}</small>
+          </div>
         </div>
       </div>
     `;

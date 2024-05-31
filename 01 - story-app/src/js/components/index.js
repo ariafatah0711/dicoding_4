@@ -1,4 +1,5 @@
 import "./header-app";
+import "./hero-app";
 import "./main-app";
 import "./footer-app";
 

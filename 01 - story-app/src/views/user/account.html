@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>
+        <%= htmlWebpackPlugin.options.title %> | PicStory
+    </title>
+</head>
+
+<body>
+    <header-app class=" sticky-top" logo="../../favicon.png" brandName="<%= brandName %>"></header-app>
+
+    <main class=" container-fluid flex w-100">
+        <hero-app img="/image/hero-account.png"></hero-app>
+
+        <main-app class="container-fluid w-100 p-auto px-5">
+            <h1 class="text-center">Akun</h1>
+            <post-list>
+
+            </post-list>
+        </main-app>
+
+    </main>
+
+    <footer-app class="bg-body-tertiary text-center"></footer-app>
+</body>
+
+</html>

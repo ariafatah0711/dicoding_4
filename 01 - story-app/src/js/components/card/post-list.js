@@ -37,11 +37,23 @@ class PostList extends LitWithoutShadowDom {
               ,
               description="${item.description}"
               ,
-              date="Last updated ${this._timePostAgo(new Date(item.createdAt).getTime())}"
+              datePostAgo="Last updated ${this._timePostAgo(new Date(item.createdAt).getTime())}"
+              date="${this._time(item.createdAt)}"
             ></post-item>`
         )}
       </div>
     `;
+  }
+
+  _time(time) {
+    const date = new Date(time);
+
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+
+    const withSlashes = [day, month, year].join("/");
+    return withSlashes;
   }
 
   _timePostAgo(time) {

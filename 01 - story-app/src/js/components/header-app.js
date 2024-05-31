@@ -3,15 +3,31 @@ import LitWithoutShadowDom from "./base/LitWithoutShadowDom";
 
 class HeaderApp extends LitWithoutShadowDom {
   static properties = {
-    brandName: "",
+    brandName: { type: String, reflect: true },
+    logo: { type: String, reflect: true },
+    home: { type: String, reflect: true },
+    add: { type: String, reflect: true },
+    dashboard: { type: String, reflect: true },
+    setting: { type: String, reflect: true },
+    account: { type: String, reflect: true },
+    logout: { type: String, reflect: true },
   };
+
+  constructor() {
+    super();
+    this.home = "/";
+    this.add = "/user/add-story.html";
+    this.dashboard = "/user/dashboard.html";
+    this.setting = "/user/setting.html";
+    this.account = "/user/account.html";
+  }
 
   render() {
     return html`
-      <nav class="navbar bg-body-tertiary px-lg-5">
+      <nav class="navbar bg-body-tertiary px-md-5">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
-            <img src="./favicon.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top" />
+            <img src="${this.logo}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top" />
             ${this.brandName}
           </a>
           <button
@@ -37,49 +53,56 @@ class HeaderApp extends LitWithoutShadowDom {
             <div class="offcanvas-body d-lg-block">
               <ul class="nav justify-content-end row">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Beranda</a>
+                  <a class="nav-link active" aria-current="page" href="${this.home}">Beranda</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Tambah Cerita</a>
+                  <a class="nav-link" href="${this.add}">Tambah Cerita</a>
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="/user/profile.html"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
                     profile
                   </a>
                   <ul class="dropdown-menu w-100 ms-auto">
-                    <li><a class="dropdown-item" href="#">Dasbord</a></li>
-                    <li><a class="dropdown-item" href="#">Setting</a></li>
-                    <li><a class="dropdown-item" href="#">Account</a></li>
+                    <li><a class="dropdown-item" href="${this.dashboard}">Dasbor</a></li>
+                    <li><a class="dropdown-item" href="${this.setting}">Pengaturan</a></li>
+                    <li><a class="dropdown-item" href="${this.account}">Akun</a></li>
                     <li>
                       <hr class="dropdown-divider" />
                     </li>
-                    <li><a class="dropdown-item" href="#">Keluar</a></li>
+                    <li><a class="dropdown-item" href="/">Keluar</a></li>
                   </ul>
                 </li>
               </ul>
             </div>
           </div>
+
           <!-- Nav items for larger screens -->
           <div class="collapse d-none d-md-flex flex-row ms-auto ">
             <ul class="navbar-nav container-fluid flex-row gap-5">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Beranda</a>
+                <a class="nav-link active" aria-current="page" href="${this.home}">Beranda</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Tambah Cerita</a>
+                <a class="nav-link" href="${this.add}">Tambah Cerita</a>
               </li>
               <li class="nav-item dropdown pe-5">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Profile
                 </a>
                 <ul class="dropdown-menu position-absolute">
-                  <li><a class="dropdown-item" href="#">Dashboard</a></li>
-                  <li><a class="dropdown-item" href="#">Setting</a></li>
-                  <li><a class="dropdown-item" href="#">Account</a></li>
+                  <li><a class="dropdown-item" href="${this.dashboard}">Dasbor</a></li>
+                  <li><a class="dropdown-item" href="${this.setting}">Pengaturan</a></li>
+                  <li><a class="dropdown-item" href="${this.account}">Akun</a></li>
                   <li>
                     <hr class="dropdown-divider" />
                   </li>
-                  <li><a class="dropdown-item" href="#">Keluar</a></li>
+                  <li><a class="dropdown-item" href="/">Keluar</a></li>
                 </ul>
               </li>
             </ul>

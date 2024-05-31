@@ -55,20 +55,34 @@ module.exports = {
       template: path.resolve(__dirname, "src/views/index.html"),
       ...htmlWebpackPluginConfig,
     }),
-    // new HtmlWebpackPlugin({
-    //   title: "Pic Story!",
-    //   filename: "user/dashboard.html",
-    //   favicon: path.resolve(__dirname, "src/public/favicon.png"),
-    //   template: path.resolve(__dirname, "src/views/user/dashboard.html"),
-    //   ...htmlWebpackPluginConfig,
-    // }),
-    // new HtmlWebpackPlugin({
-    //   title: "Pic Story!",
-    //   filename: "user/add-story.html",
-    //   favicon: path.resolve(__dirname, "src/public/favicon.png"),
-    //   template: path.resolve(__dirname, "src/views/user/add-story.html"),
-    //   ...htmlWebpackPluginConfig,
-    // }),
+    new HtmlWebpackPlugin({
+      title: "Pic Story!",
+      filename: "user/add-story.html",
+      favicon: path.resolve(__dirname, "src/public/favicon.png"),
+      template: path.resolve(__dirname, "src/views/user/add-story.html"),
+      ...htmlWebpackPluginConfig,
+    }),
+    new HtmlWebpackPlugin({
+      title: "Pic Story!",
+      filename: "user/dashboard.html",
+      favicon: path.resolve(__dirname, "src/public/favicon.png"),
+      template: path.resolve(__dirname, "src/views/user/dashboard.html"),
+      ...htmlWebpackPluginConfig,
+    }),
+    new HtmlWebpackPlugin({
+      title: "Pic Story!",
+      filename: "user/account.html",
+      favicon: path.resolve(__dirname, "src/public/favicon.png"),
+      template: path.resolve(__dirname, "src/views/user/account.html"),
+      ...htmlWebpackPluginConfig,
+    }),
+    new HtmlWebpackPlugin({
+      title: "Pic Story!",
+      filename: "user/setting.html",
+      favicon: path.resolve(__dirname, "src/public/favicon.png"),
+      template: path.resolve(__dirname, "src/views/user/setting.html"),
+      ...htmlWebpackPluginConfig,
+    }),
 
     new CopyWebpackPlugin({
       patterns: [

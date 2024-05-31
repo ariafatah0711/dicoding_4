@@ -10,14 +10,12 @@
 </head>
 
 <body>
-  <header-app class=" sticky-top" brandName="<%= brandName %>"></header-app>
+  <header-app class=" sticky-top" logo="favicon.png" brandName="<%= brandName %>"></header-app>
 
   <main class=" container-fluid flex w-100">
-    <hero>
-      <img src="./image/hero.jpg" class="rounded mx-auto d-block" style="max-width: 10rem;" alt="...">
-    </hero>
+    <hero-app img="./image/hero.jpg"></hero-app>
 
-    <main-app class="container-fluid w-100 p-auto px-5">
+    <main-app class="container-fluid w-100 p-auto padded-10">
       <h1 class="text-center">aku ingin denger cerita kamu hari ini</h1>
       <post-list>
 
@@ -26,9 +24,7 @@
 
   </main>
 
-  <footer-app>
-    test
-  </footer-app>
+  <footer-app class="bg-body-tertiary text-center"></footer-app>
 </body>
 
 </html>

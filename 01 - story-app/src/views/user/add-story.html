@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>
+        <%= htmlWebpackPlugin.options.title %> | PicStory
+    </title>
+</head>
+
+<body>
+    <header-app class=" sticky-top" logo="../../favicon.png" brandName="<%= brandName %>"></header-app>
+
+    <main class=" container-fluid flex w-100">
+        <hero-app img="/image/hero-add.png"></hero-app>
+
+        <main-app class="container-fluid w-100 p-auto px-5">
+            <h1 class="text-center">tambahkan ceritamu!</h1>
+            <add-story class="padded-20">
+                <div class="form-floating">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                        style="height: 100px"></textarea>
+                    <label for="floatingTextarea2">Description</label>
+                </div>
+                <div class="input-group">
+                    <input type="file" class="form-control" id="inputGroupFile04"
+                        aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                </div>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <button type="button" class="btn btn-outline-primary"
+                        onclick="window.location.href='/'">Kirim</button>
+                </div>
+            </add-story>
+        </main-app>
+
+    </main>
+
+    <footer-app class=" bg-body-tertiary text-center"></footer-app>
+</body>
+
+</html>
