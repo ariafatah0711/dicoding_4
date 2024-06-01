@@ -5,9 +5,74 @@
     box-sizing: border-box;
 }
 
+//
+// Variables
+//
+
+
+//
+// Mixins
+//
+@mixin media-mobile {
+    @media (min-width: 768px) {
+      @content;
+    }
+}
+
+@mixin media-tablet {
+    @media (min-width: 992px) {
+      @content;
+    }
+}
+
+@mixin wrap-line-text {
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+@mixin pointer {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+span {
+    @include pointer()
+}
+
+//
+// main content
+//
 main {
     min-height: 90vh !important;
 }
+
+.account-app {
+    display: flex !important;
+
+    .account-header {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        flex-direction: row;
+        width: 100%;
+        .col-form-label {
+            display: flex;
+            width: 100%;
+        }
+    }
+
+    .account-username, .account-password {
+        display: grid;
+        flex-direction: row;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 100%;
+    }
+}
+
+// padded
 .padded-10, .padded-20 {
     display: flex;
     flex-direction: column;
@@ -17,26 +82,22 @@ main {
 .padded-10 {padding: 0 5%;}
 .padded-20 {padding: 0 10%;}
 
-@media screen and (min-width: 992px) {
-    .padded-10 {padding: 0 10%;}
-}
-    
-@media screen and (min-width: 768px) {
-    .padded-20 {padding: 0 20%;}
+.p-md-wrap {
+    @include wrap-line-text()
 }
 
-.flex-text {
-    white-space: wrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    // height: 20px;
-    // border: 1px solid black;
-    // display: flex !important;
-    // letter-spacing: 0 !important;
-    // white-space: wrap !important;
-    // overflow: hidden !important;
-    // text-overflow: ellipsis !important;
+// @media screen and (min-width: 768px) {
+// }
+// @media screen and (min-width: 992px) {
+// }
+
+@include media-mobile() {
+    .padded-20 {padding: 0 20%;}
+    .p-md-wrap {-webkit-line-clamp: 2;}
 }
+
+@include media-tablet() {
+    .padded-10 {padding: 0 10%;}
+    .p-md-wrap {-webkit-line-clamp: 1;}
+}
+

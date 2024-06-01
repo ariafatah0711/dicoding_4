@@ -57,7 +57,7 @@ class PostItem extends LitWithoutShadowDom {
           <p class="card-text">${this.description}</p>
         </div>
         <div class="card-footer d-flex justify-content-between">
-          <small class="text-body-secondary flex-text">${this.datePostAgo}</small>
+          <small class="text-body-secondary p-md-wrap">${this.datePostAgo}</small>
           <div>
             <i class="bi bi-calendar-check"></i>
             <small class="text-body-secondary"> ${this.date}</small>

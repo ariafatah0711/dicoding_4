@@ -16,9 +16,30 @@
         <hero-app img="/image/hero-setting.png" title="pengaturan"></hero-app>
 
         <main-app class="container-fluid w-100 p-auto px-5">
-            <post-list>
-
-            </post-list>
+            <setting-app class="padded-20">
+                <div class="row g-2">
+                    <div class="col-md">
+                        <div class="form-floating">
+                            <select class="form-select" id="floatingSelectGrid">
+                                <option selected>Terang</option>
+                                <option value="1">Gelap</option>
+                            </select>
+                            <label for="floatingSelectGrid">Ganti Thema</label>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="form-floating">
+                            <select class="form-select" id="floatingSelectGrid">
+                                <option selected>Indonesia</option>
+                                <option value="1">English</option>
+                                <option value="2">Japanes</option>
+                                <option value="3">Spanyol</option>
+                            </select>
+                            <label for="floatingSelectGrid">Ganti Bahasa</label>
+                        </div>
+                    </div>
+                </div>
+            </setting-app>
         </main-app>
 
     </main>

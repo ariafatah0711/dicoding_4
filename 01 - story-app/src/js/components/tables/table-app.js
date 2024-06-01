@@ -82,7 +82,7 @@ class TableApp extends LitWithoutShadowDom {
               <tr id="${item.description}]">
                 <th scope="row">${index + 1}</th>
                 <td class="w-75 w-md-25">
-                  <p class="flex-text">${item.description}</p>
+                  <p class="p-md-wrap">${item.description}</p>
                 </td>
                 <td class="d-flex justify-content-between gap-4 flex-column flex-lg-row">
                   <div class="d-flex gap-2 ">

@@ -56,7 +56,7 @@ class TablePagination extends LitWithoutShadowDom {
               `
             : html`
                 <li class="page-item">
-                  <a class="page-link" @click=${(e) => this.handleClick(e, this.chunk - 1)}>Previous</a>
+                  <a class="page-link" href="#" @click=${(e) => this.handleClick(e, this.chunk - 1)}>Previous</a>
                 </li>
               `}
           ${pages.map(
