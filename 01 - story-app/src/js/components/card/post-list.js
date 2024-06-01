@@ -48,11 +48,14 @@ class PostList extends LitWithoutShadowDom {
   _time(time) {
     const date = new Date(time);
 
-    const year = date.getFullYear();
-    const month = date.getMonth() + 1;
-    const day = date.getDate();
+    let year = date.getFullYear();
+    let month = date.getMonth() + 1;
+    let day = date.getDate();
 
-    const withSlashes = [day, month, year].join("/");
+    let formattedMonth = month < 10 ? "0" + month : month;
+    let formattedDay = day < 10 ? "0" + day : day;
+
+    const withSlashes = [formattedDay, formattedMonth, year].join("/");
     return withSlashes;
   }
 
@@ -69,13 +72,13 @@ class PostList extends LitWithoutShadowDom {
     let result;
 
     if (yearsDifference >= 1) {
-      result = `${yearsDifference} year${yearsDifference > 1 ? "s" : ""} ago`;
+      result = `${yearsDifference} year${yearsDifference > 1 ? "s" : ""}`;
     } else if (monthsDifference >= 1) {
-      result = `${monthsDifference} month${monthsDifference > 1 ? "s" : ""} ago`;
+      result = `${monthsDifference} month${monthsDifference > 1 ? "s" : ""}`;
     } else if (weeksDifference >= 1) {
-      result = `${weeksDifference} week${weeksDifference > 1 ? "s" : ""} ago`;
+      result = `${weeksDifference} week${weeksDifference > 1 ? "s" : ""}`;
     } else {
-      result = `${daysDifference} day${daysDifference > 1 ? "s" : ""} ago`;
+      result = `${daysDifference} day${daysDifference > 1 ? "s" : ""}`;
     }
 
     return result;

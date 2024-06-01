@@ -7,3 +7,5 @@ import "./card/post-list";
 import "./card/post-item";
 
 import "./form/add-story";
+
+import "./tables/table-app";

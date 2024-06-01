@@ -24,3 +24,19 @@ main {
 @media screen and (min-width: 768px) {
     .padded-20 {padding: 0 20%;}
 }
+
+.flex-text {
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    // height: 20px;
+    // border: 1px solid black;
+    // display: flex !important;
+    // letter-spacing: 0 !important;
+    // white-space: wrap !important;
+    // overflow: hidden !important;
+    // text-overflow: ellipsis !important;
+}

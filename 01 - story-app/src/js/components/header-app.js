@@ -11,18 +11,92 @@ class HeaderApp extends LitWithoutShadowDom {
     setting: { type: String, reflect: true },
     account: { type: String, reflect: true },
     logout: { type: String, reflect: true },
+    login: { type: Boolean, reflect: true },
   };
 
   constructor() {
     super();
+
     this.home = "/";
     this.add = "/user/add-story.html";
     this.dashboard = "/user/dashboard.html";
     this.setting = "/user/setting.html";
     this.account = "/user/account.html";
+
+    this._login();
+  }
+
+  _login() {
+    const key = "login";
+    if (!localStorage.getItem(key)) {
+      localStorage.setItem(key, false);
+    }
+
+    const login = JSON.parse(localStorage.getItem(key));
+    this.login = login;
+  }
+
+  _loginUser() {
+    const key = "login";
+    localStorage.setItem(key, true);
+  }
+
+  _logoutUser() {
+    const key = "login";
+    localStorage.setItem(key, false);
   }
 
   render() {
+    const loginNav = html`
+      <ul class="dropdown-menu position-absolute">
+        <li><a class="dropdown-item" href="${this.dashboard}">Dasbor</a></li>
+        <li><a class="dropdown-item" href="${this.setting}">Pengaturan</a></li>
+        <li><a class="dropdown-item" href="${this.account}">Akun</a></li>
+        <li>
+          <hr class="dropdown-divider" />
+        </li>
+        <li><a class="dropdown-item" href="/" @click=${this._logoutUser}>Keluar</a></li>
+      </ul>
+    `;
+
+    const logoutNav = html`
+      <ul class="dropdown-menu position-absolute">
+        <li><a class="dropdown-item" href="${this.setting}">Pengaturan</a></li>
+        <li>
+          <hr class="dropdown-divider" />
+        </li>
+        <li><a class="dropdown-item" href="/" @click=${this._loginUser}>Masuk</a></li>
+      </ul>
+    `;
+
+    const loginNavOffCanvas = html`
+      <ul class="dropdown-menu w-100 ms-auto">
+        <li><a class="dropdown-item" href="${this.dashboard}">Dasbor</a></li>
+        <li><a class="dropdown-item" href="${this.setting}">Pengaturan</a></li>
+        <li><a class="dropdown-item" href="${this.account}">Akun</a></li>
+        <li>
+          <hr class="dropdown-divider" />
+        </li>
+        <li><a class="dropdown-item" href="/" @click=${this._logoutUser}>Keluar</a></li>
+      </ul>
+    `;
+
+    const logoutNavOffCanvas = html`
+      <ul class="dropdown-menu w-100 ms-auto">
+        <li><a class="dropdown-item" href="${this.setting}">Pengaturan</a></li>
+        <li>
+          <hr class="dropdown-divider" />
+        </li>
+        <li><a class="dropdown-item" href="/" @click=${this._loginUser}>Masuk</a></li>
+      </ul>
+    `;
+
+    const loginTrueAdd = html`
+      <li class="nav-item">
+        <a class="nav-link" href="${this.add}">Tambah Cerita</a>
+      </li>
+    `;
+
     return html`
       <nav class="navbar bg-body-tertiary px-md-5">
         <div class="container-fluid">
@@ -55,9 +129,7 @@ class HeaderApp extends LitWithoutShadowDom {
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="${this.home}">Beranda</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="${this.add}">Tambah Cerita</a>
-                </li>
+                ${this.login ? loginTrueAdd : null}
                 <li class="nav-item dropdown">
                   <a
                     class="nav-link dropdown-toggle"
@@ -68,15 +140,7 @@ class HeaderApp extends LitWithoutShadowDom {
                   >
                     profile
                   </a>
-                  <ul class="dropdown-menu w-100 ms-auto">
-                    <li><a class="dropdown-item" href="${this.dashboard}">Dasbor</a></li>
-                    <li><a class="dropdown-item" href="${this.setting}">Pengaturan</a></li>
-                    <li><a class="dropdown-item" href="${this.account}">Akun</a></li>
-                    <li>
-                      <hr class="dropdown-divider" />
-                    </li>
-                    <li><a class="dropdown-item" href="/">Keluar</a></li>
-                  </ul>
+                  ${this.login ? loginNavOffCanvas : logoutNavOffCanvas}
                 </li>
               </ul>
             </div>
@@ -88,22 +152,12 @@ class HeaderApp extends LitWithoutShadowDom {
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="${this.home}">Beranda</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="${this.add}">Tambah Cerita</a>
-              </li>
+              ${this.login ? loginTrueAdd : null}
               <li class="nav-item dropdown pe-5">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Profile
                 </a>
-                <ul class="dropdown-menu position-absolute">
-                  <li><a class="dropdown-item" href="${this.dashboard}">Dasbor</a></li>
-                  <li><a class="dropdown-item" href="${this.setting}">Pengaturan</a></li>
-                  <li><a class="dropdown-item" href="${this.account}">Akun</a></li>
-                  <li>
-                    <hr class="dropdown-divider" />
-                  </li>
-                  <li><a class="dropdown-item" href="/">Keluar</a></li>
-                </ul>
+                ${this.login ? loginNav : logoutNav}
               </li>
             </ul>
           </div>

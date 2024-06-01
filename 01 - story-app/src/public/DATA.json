@@ -7,21 +7,21 @@
         "name": "Faisal Sulaiman",
         "description": "In rhoncus lorem nec ex egestas mollis vel a mauris. Pellentesque vel diam at neque hendrerit bibendum. Quisque egestas, dolor eu semper dapibus, turpis neque.",
         "photoUrl": "https://picsum.photos/1200/700?random=1",
-        "createdAt": "2022-01-08T06:34:18.598Z"
+        "createdAt": "2024-04-08T06:34:18.598Z"
       },
       {
         "id": "story-q9anz4avd83ni2r3",
         "name": "Alya Jamaluddin",
         "description": "In a pretium sem. Suspendisse eget sollicitudin enim, sed suscipit mi. Integer sagittis lorem urna, tincidunt viverra lectus gravida id. Praesent venenatis nibh ac nisi.",
         "photoUrl": "https://picsum.photos/1200/700?random=2",
-        "createdAt": "2022-01-08T06:34:18.598Z"
+        "createdAt": "2024-05-30T06:34:18.598Z"
       },
       {
         "id": "story-vd83nqai2r39anz4",
         "name": "Vina Indah",
         "description": "Curabitur euismod risus venenatis felis iaculis tincidunt. Pellentesque velit risus, tempus et odio vel, venenatis volutpat erat. Vivamus sed gravida lacus, non feugiat nibh. Nam.",
         "photoUrl": "https://picsum.photos/1200/700?random=3",
-        "createdAt": "2022-01-08T06:34:18.598Z"
+        "createdAt": "2023-09-08T06:34:18.598Z"
       },
       {
         "id": "story-0Vp2S3PMsFgFvU4u",
@@ -64,6 +64,27 @@
         "description": "Quisque ultricies feugiat tincidunt. Duis auctor condimentum felis, a imperdiet odio lobortis eget. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis.",
         "photoUrl": "https://picsum.photos/1200/700?random=9",
         "createdAt": "2022-01-08T06:34:18.598Z"
+      },
+      {
+        "id": "story-FvU4u0Vp2S3PMsFg",
+        "name": "Faisal Sulaiman",
+        "description": "In rhoncus lorem nec ex egestas mollis vel a mauris. Pellentesque vel diam at neque hendrerit bibendum. Quisque egestas, dolor eu semper dapibus, turpis neque.",
+        "photoUrl": "https://picsum.photos/1200/700?random=1",
+        "createdAt": "2024-04-08T06:34:18.598Z"
+      },
+      {
+        "id": "story-q9anz4avd83ni2r3",
+        "name": "Alya Jamaluddin",
+        "description": "In a pretium sem. Suspendisse eget sollicitudin enim, sed suscipit mi. Integer sagittis lorem urna, tincidunt viverra lectus gravida id. Praesent venenatis nibh ac nisi.",
+        "photoUrl": "https://picsum.photos/1200/700?random=2",
+        "createdAt": "2024-05-30T06:34:18.598Z"
+      },
+      {
+        "id": "story-vd83nqai2r39anz4",
+        "name": "Vina Indah",
+        "description": "Curabitur euismod risus venenatis felis iaculis tincidunt. Pellentesque velit risus, tempus et odio vel, venenatis volutpat erat. Vivamus sed gravida lacus, non feugiat nibh. Nam.",
+        "photoUrl": "https://picsum.photos/1200/700?random=3",
+        "createdAt": "2023-09-08T06:34:18.598Z"
       }
     ]
   }
