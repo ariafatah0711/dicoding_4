@@ -3,14 +3,17 @@ import LitWithoutShadowDom from "../base/LitWithoutShadowDom";
 
 class TableApp extends LitWithoutShadowDom {
   static properties = {
-    data: { type: String, reflect: true },
-    chunk: { type: SVGAnimatedInteger, reflect: true },
+    data: { type: Array, reflect: true },
+    chunk: { type: Number, reflect: true },
+    totalChunk: { type: Number, reflect: true },
+    status: { type: String, reflect: true },
+    anonim: { type: String, reflect: true },
+    tab: { type: String, reflect: true },
   };
 
   constructor() {
     super();
     this.data = [];
-    this.chunk = 0;
     this._fetchData();
   }
 
@@ -19,20 +22,47 @@ class TableApp extends LitWithoutShadowDom {
       const response = await fetch("/DATA.json");
       const responseJson = await response.json();
       const data = responseJson.listStory;
-      const chunkedData = this._chunkArray(data, 9);
-      console.log(chunkedData);
+      const chunkedData = this.anonim == "true" ? this._chunkArrayAnonym(data, 9) : this._chunkArrayUser(data, 9);
 
+      this.chunk = sessionStorage.getItem(this.tab) ? sessionStorage.getItem(this.tab) : 0;
+      this.totalChunk = chunkedData.length;
       this.data = chunkedData[this.chunk];
+
+      this._checkStatus();
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   }
 
-  _chunkArray(array, chunkSize) {
+  _checkStatus() {
+    if (parseInt(this.chunk) + 1 == this.totalChunk) {
+      this.status = "next";
+    } else if (this.chunk == 0) {
+      this.status = "prev";
+    } else {
+      this.status = "normal";
+    }
+  }
+
+  _chunkArrayUser(array, chunkSize) {
     const result = [];
     for (let i = 0; i < array.length; i += chunkSize) {
       result.push(array.slice(i, i + chunkSize));
     }
+
+    this.data = result[this.chunk];
+    return result;
+  }
+
+  _chunkArrayAnonym(arrays, chunkSize) {
+    const result = [];
+    const filteredArrays = arrays.filter((array) => array.name == "anonim");
+
+    for (let i = 0; i < filteredArrays.length; i += chunkSize) {
+      result.push(filteredArrays.slice(i, i + chunkSize));
+    }
+
+    this.chunk = 0;
     return result;
   }
 
@@ -70,6 +100,12 @@ class TableApp extends LitWithoutShadowDom {
           )}
         </tbody>
       </table>
+      <table-pagination
+        chunk=${this.chunk}
+        totalChunk=${this.totalChunk}
+        status="${this.status}"
+        tab="${this.tab}"
+      ></table-pagination>
     `;
   }
 
@@ -88,4 +124,5 @@ class TableApp extends LitWithoutShadowDom {
   }
 }
 
-customElements.define("table-app", TableApp);
+// customElements.define("table-app", TableApp);
+export default TableApp;

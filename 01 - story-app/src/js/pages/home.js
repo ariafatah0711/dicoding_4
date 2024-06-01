@@ -5,11 +5,11 @@ const Home = {
   },
 
   async _initialData() {
-    console.log("init listener Home");
+    // console.log("init listener Home");
   },
 
   _initialListener() {
-    console.log("init listener Home");
+    // console.log("init listener Home");
   },
 };
 

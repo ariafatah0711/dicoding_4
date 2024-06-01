@@ -5,11 +5,11 @@ const Add = {
   },
 
   async _initialData() {
-    console.log("init listener Add");
+    // console.log("init listener Add");
   },
 
   _initialListener() {
-    console.log("init listener Add");
+    // console.log("init listener Add");
   },
 };
 

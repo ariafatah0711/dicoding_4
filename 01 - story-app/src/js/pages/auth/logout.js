@@ -5,11 +5,11 @@ const Logout = {
   },
 
   async _initialData() {
-    console.log("data");
+    // console.log("data");
   },
 
   _initialListener() {
-    console.log("init");
+    // console.log("init");
   },
 };
 

@@ -5,11 +5,11 @@ const Account = {
   },
 
   async _initialData() {
-    console.log("init data Account");
+    // console.log("init data Account");
   },
 
   _initialListener() {
-    console.log("init listener Account");
+    // console.log("init listener Account");
   },
 };
 

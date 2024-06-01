@@ -5,11 +5,11 @@ const Dashboard = {
   },
 
   async _initialData() {
-    console.log("init listener Dashboard");
+    // console.log("init listener Dashboard");
   },
 
   _initialListener() {
-    console.log("init listener Dashboard");
+    // console.log("init listener Dashboard");
   },
 };
 
