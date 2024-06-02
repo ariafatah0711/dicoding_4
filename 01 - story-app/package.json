@@ -37,8 +37,8 @@
   },
   "dependencies": {
     "@lit/localize": "^0.12.1",
-    "@popperjs/core": "2.11.6",
-    "bootstrap": "^5.3.2",
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.0",
     "date-fns": "^3.6.0",
     "lit": "3.1.3"
