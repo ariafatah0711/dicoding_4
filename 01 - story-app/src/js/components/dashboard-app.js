@@ -8,15 +8,6 @@ class DashboardApp extends LitWithoutShadowDom {
 
   constructor() {
     super();
-    this._checkTab();
-  }
-
-  _checkTab() {
-    if (!sessionStorage.getItem("tab")) {
-      this.tab = sessionStorage.getItem("tab") ? sessionStorage.getItem("tab") : "user";
-      sessionStorage.setItem("tab", "user");
-    }
-    this.tab = sessionStorage.getItem("tab") ? sessionStorage.getItem("tab") : "user";
   }
 
   _changeTab(tab) {
@@ -26,8 +17,6 @@ class DashboardApp extends LitWithoutShadowDom {
 
   render() {
     const tabUser = sessionStorage.getItem("tab") === "user" ? true : false;
-    // console.log(sessionStorage.getItem("tab"));
-    // console.log(tabUser);
 
     return html`
       <ul class="nav nav-tabs" id="myTab" role="tablist">

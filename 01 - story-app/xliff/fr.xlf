@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+<file target-language="fr" source-language="id" original="lit-localize-inputs" datatype="plaintext">
+<body>
+<trans-unit id="sb56798071baac29e">
+  <source>dasbor</source>
+  <target>tableau de bord</target>
+</trans-unit>
+<trans-unit id="s63dc8e0c3a4e101c">
+  <source>pengaturan</source>
+  <target>paramètres</target>
+</trans-unit>
+<trans-unit id="sc22a9483cdfc43da">
+  <source>akun</source>
+  <target>compte</target>
+</trans-unit>
+<trans-unit id="s90a714a4349ca0f1">
+  <source>keluar</source>
+  <target>déconnexion</target>
+</trans-unit>
+<trans-unit id="s861bcba4db199cb4">
+  <source>masuk</source>
+  <target>connexion</target>
+</trans-unit>
+<trans-unit id="s854242b8a879835a">
+  <source>tambah cerita</source>
+  <target>ajouter une histoire</target>
+</trans-unit>
+<trans-unit id="s55a10969ca715e1a">
+  <source>beranda</source>
+  <target>accueil</target>
+</trans-unit>
+<trans-unit id="sb7c4c1e6784787df">
+  <source>profil</source>
+  <target>profil</target>
+</trans-unit>
+<trans-unit id="s51d0f228b37fd03e">
+  <source>aku ingin denger cerita kamu hari ini</source>
+</trans-unit>
+<trans-unit id="s04a2bb60eb38f246">
+  <source>tambahkan ceritamu</source>
+</trans-unit>
+</body>
+</file>
+</xliff>

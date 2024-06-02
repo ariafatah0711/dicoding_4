@@ -6,8 +6,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:dev": "webpack serve --config webpack.dev.js",
     "build:prod": "webpack --config webpack.prod.js",
-    "build:start": "npm run build:prod && npm run serve",
+    "build:start": "npm run translate && npm run build:prod && npm run serve",
     "serve": "http-server dist --port 9000",
+    "translate": "npx lit-localize build",
+    "extract": "lit-localize extract",
     "prettier:check": "prettier --check .",
     "prettier:format": "prettier --write ."
   },
@@ -17,6 +19,7 @@
   "devDependencies": {
     "@babel/core": "7.20.2",
     "@babel/preset-env": "7.20.2",
+    "@lit/localize-tools": "^0.7.2",
     "autoprefixer": "10.4.13",
     "babel-loader": "9.1.0",
     "clean-webpack-plugin": "4.0.0",
@@ -33,6 +36,7 @@
     "webpack-merge": "5.8.0"
   },
   "dependencies": {
+    "@lit/localize": "^0.12.1",
     "@popperjs/core": "2.11.6",
     "bootstrap": "^5.3.2",
     "bootstrap-icons": "^1.11.0",

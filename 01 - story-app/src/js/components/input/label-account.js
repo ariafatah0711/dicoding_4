@@ -12,7 +12,7 @@ class LabelAccount extends LitWithoutShadowDom {
       <div class="mb-3 row account-header">
         <label for="staticUser" class="col-sm-2 col-form-label">username</label>
         <div class="col-sm-10 col-form-value">
-          <input type="text" readonly class="form-control" id="staticUser" value="Aria" />
+          <input type="text" readonly class="form-control" id="staticUser" value="admin" />
         </div>
       </div>
     `;
@@ -21,7 +21,7 @@ class LabelAccount extends LitWithoutShadowDom {
       <div class="mb-3 row account-header">
         <label for="staticEmail" class="col-sm-2 col-form-label">alamat email</label>
         <div class="col-sm-10 col-form-value">
-          <input type="text" readonly class="form-control" id="staticEmail" value="calhounsgt07@gmail.com" />
+          <input type="text" readonly class="form-control" id="staticEmail" value="admin@gmail.com" />
         </div>
       </div>
     `;

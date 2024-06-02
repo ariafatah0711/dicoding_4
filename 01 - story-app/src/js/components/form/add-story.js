@@ -20,16 +20,17 @@ class AddStory extends LitWithoutShadowDom {
             placeholder="masukan description disini"
             id="floatingTextarea2"
             style="height: 100px"
-            minlength="15"
+            minlength="10"
             maxlength="125"
             required
           ></textarea>
           <label for="floatingTextarea2">Deskripsi</label>
-          <div class="invalid-feedback">masukan text minmal 15-125 huruf</div>
+          <div class="invalid-feedback">masukan text minmal 10-125 huruf</div>
         </div>
         <div class="input-group">
           <input
             type="file"
+            accept=".png, .jpg, .jpeg"
             class="form-control"
             id="inputGroupFile04"
             aria-describedby="inputGroupFileAddon04"

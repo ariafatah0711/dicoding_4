@@ -6,12 +6,16 @@ class PostList extends LitWithoutShadowDom {
   static properties = {
     data: { type: String, reflect: true },
     currentTime: { type: Number },
+    chunk: { type: Number, reflect: true },
+    totalChunk: { type: Number, reflect: true },
+    status: { type: String, reflect: true },
   };
 
   constructor() {
     super();
     this.currentTime = Date.now();
     this.data = [];
+    this.chunk = 3;
     this._fetchData();
   }
 
@@ -20,29 +24,97 @@ class PostList extends LitWithoutShadowDom {
       const response = await fetch("DATA.json");
       const responseJson = await response.json();
       const data = responseJson.listStory;
-      this.data = data;
+      const chunkData = this._chunkArrayUser(data, 9);
+      this.chunk = sessionStorage.getItem("home") ? sessionStorage.getItem("home") : 0;
+      this.totalChunk = chunkData.length;
+      this.data = chunkData[this.chunk];
+      this._checkStatus();
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   }
 
+  _checkStatus() {
+    if (!this.data) {
+      sessionStorage.setItem("home", 0);
+      window.location.reload();
+    }
+
+    if (parseInt(this.chunk) + 1 == this.totalChunk) {
+      this.status = "next";
+    } else if (this.chunk == 0) {
+      this.status = "prev";
+    } else {
+      this.status = "normal";
+    }
+  }
+
+  _chunkArrayUser(array, chunkSize) {
+    const result = [];
+    for (let i = 0; i < array.length; i += chunkSize) {
+      result.push(array.slice(i, i + chunkSize));
+    }
+
+    this.data = result[this.chunk];
+    return result;
+  }
+
   render() {
-    return html`
-      <div class="row row-cols-1 row-cols-md-3 g-4">
-        ${this.data.map(
-          (item) =>
-            html`<post-item
-              name="${item.name}"
-              img="${item.photoUrl}"
-              ,
-              description="${item.description}"
-              ,
-              datePostAgo="Last updated ${this._timePostAgo(new Date(item.createdAt).getTime())}"
-              date="${this._time(item.createdAt)}"
-            ></post-item>`
-        )}
+    const withValid = html`
+      <div class="row row-cols-1 row-cols-md-3 g-4 pb-4">
+        ${this.data
+          ? html`
+              ${this.data.map(
+                (item) =>
+                  html`<post-item
+                    name="${item.name}"
+                    img="${item.photoUrl}"
+                    ,
+                    description="${item.description}"
+                    ,
+                    datePostAgo="Last updated ${this._timePostAgo(new Date(item.createdAt).getTime())}"
+                    date="${this._time(item.createdAt)}"
+                  ></post-item>`
+              )}
+            `
+          : html` <data-not-found> data tidak ada </data-not-found> `}
       </div>
+      ${this.status != "abonormal"
+        ? html`
+          <post-pagination
+          chunk=${this.chunk}
+          totalChunk=${this.totalChunk}
+          status=${this.status}
+          tab="home"
+          ></-pagination>
+          `
+        : html` <pagination-reset type="home"></pagination-reset> `}
     `;
+
+    const withoutValid = html`
+      <div class="row row-cols-1 row-cols-md-3 g-4 pb-4">
+      ${this.data.map(
+        (item) =>
+          html`<post-item
+            name="${item.name}"
+            img="${item.photoUrl}"
+            ,
+            description="${item.description}"
+            ,
+            datePostAgo="Last updated ${this._timePostAgo(new Date(item.createdAt).getTime())}"
+            date="${this._time(item.createdAt)}"
+          ></post-item> `
+      )}
+      </div>
+      <post-pagination
+      chunk=${this.chunk}
+      totalChunk=${this.totalChunk}
+      status=${this.status}
+      tab="home"
+      ></-pagination>
+    `;
+
+    return withoutValid;
   }
 
   _time(time) {

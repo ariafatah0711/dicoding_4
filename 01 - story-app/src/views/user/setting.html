@@ -13,35 +13,16 @@
     <header-app class=" sticky-top" logo="../../favicon.png" brandName="<%= brandName %>"></header-app>
 
     <main class=" container-fluid flex w-100">
-        <hero-app img="/image/hero-setting.png" title="pengaturan"></hero-app>
+        <hero-app img="/image/hero-setting.png" type="setting"></hero-app>
 
         <main-app class="container-fluid w-100 p-auto px-5">
             <setting-app class="padded-20">
                 <div class="row g-2">
-                    <div class="col-md">
-                        <div class="form-floating">
-                            <select class="form-select" id="floatingSelectGrid">
-                                <option selected>Terang</option>
-                                <option value="1">Gelap</option>
-                            </select>
-                            <label for="floatingSelectGrid">Ganti Thema</label>
-                        </div>
-                    </div>
-                    <div class="col-md">
-                        <div class="form-floating">
-                            <select class="form-select" id="floatingSelectGrid">
-                                <option selected>Indonesia</option>
-                                <option value="1">English</option>
-                                <option value="2">Japanes</option>
-                                <option value="3">Spanyol</option>
-                            </select>
-                            <label for="floatingSelectGrid">Ganti Bahasa</label>
-                        </div>
-                    </div>
+                    <select-theme class="col-md"></select-theme>
+                    <select-language class="col-md"></select-language>
                 </div>
             </setting-app>
         </main-app>
-
     </main>
 
     <footer-app class="bg-body-tertiary text-center"></footer-app>

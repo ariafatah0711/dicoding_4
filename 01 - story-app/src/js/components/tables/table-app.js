@@ -23,11 +23,9 @@ class TableApp extends LitWithoutShadowDom {
       const responseJson = await response.json();
       const data = responseJson.listStory;
       const chunkedData = this.anonim == "true" ? this._chunkArrayAnonym(data, 9) : this._chunkArrayUser(data, 9);
-
       this.chunk = sessionStorage.getItem(this.tab) ? sessionStorage.getItem(this.tab) : 0;
       this.totalChunk = chunkedData.length;
       this.data = chunkedData[this.chunk];
-
       this._checkStatus();
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -35,6 +33,11 @@ class TableApp extends LitWithoutShadowDom {
   }
 
   _checkStatus() {
+    if (!this.data) {
+      sessionStorage.setItem(this.tab, 0);
+      window.location.reload();
+    }
+
     if (parseInt(this.chunk) + 1 == this.totalChunk) {
       this.status = "next";
     } else if (this.chunk == 0) {

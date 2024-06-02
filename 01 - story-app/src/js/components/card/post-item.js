@@ -20,16 +20,7 @@ class PostItem extends LitWithoutShadowDom {
   constructor() {
     super();
     this.classList.add("col");
-
-    // this.loading = true;
   }
-
-  // connectedCallback() {
-  //   super.connectedCallback();
-  //   setTimeout(() => {
-  //     this.loading = false;
-  //   }, 2000);
-  // }
 
   render() {
     const withLoading = html`
@@ -47,7 +38,11 @@ class PostItem extends LitWithoutShadowDom {
         : html` <img src="${this.img}" class="card-img-top" alt="..." /> `}
     `;
 
-    const withoutLoading = html` <img src="${this.img}" class="card-img-top" alt="..." /> `;
+    const withoutLoading = html`
+      <div class="card-image">
+        <img src="${this.img}" class="card-img-top" alt="..." />
+      </div>
+    `;
 
     return html`
       <div class="card h-100">

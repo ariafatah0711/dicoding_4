@@ -16,9 +16,9 @@ const routes = {
 const detectRoute = () => routes[window.location.pathname];
 
 const initPages = () => {
-  const header = document.querySelector("header");
+  const header = document.querySelector("header-app");
   const main = document.querySelector("main");
-  const footer = document.querySelector("footer");
+  const footer = document.querySelector("footer-app");
 
   if (header && main && footer) {
     main.style.minHeight = `calc(100vh - ${header.clientHeight + footer.clientHeight}px)`;

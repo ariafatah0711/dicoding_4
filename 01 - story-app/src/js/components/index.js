@@ -7,6 +7,7 @@ import "./footer-app";
 // card
 import "./card/post-list";
 import "./card/post-item";
+import "./card/post-pagination";
 
 // form
 import "./form/add-story";
@@ -19,3 +20,10 @@ import "./tables/table-pagination";
 // input
 import "./input/label-account";
 import "./input/input-account";
+
+// pagination
+import "./pagination/pagination-reset";
+
+// selects
+import "./selects/select-theme";
+import "./selects/select-language";
