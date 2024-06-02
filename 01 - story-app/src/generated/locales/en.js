@@ -30,6 +30,7 @@
 's90a714a4349ca0f1': `logout`,
 's94a644b5e0880579': `username`,
 's9a6832609fd9c1bf': `email address`,
+'sa52127387350c01a': `reset settings`,
 'sb265cc26dbb527f9': `change name`,
 'sb56798071baac29e': `dashboard`,
 'sb7c4c1e6784787df': `profile`,
@@ -40,6 +41,7 @@
 'sdb40d268bbd1a81c': `change language`,
 'sdeec2d9bd0d9a355': `blue`,
 'se889b38b74f47e2d': `enter text minimum 10-125 characters`,
+'se96192ff1de6ff4d': `remove account`,
 'sf31e8cf85d601d2a': `previous`,
     };
   

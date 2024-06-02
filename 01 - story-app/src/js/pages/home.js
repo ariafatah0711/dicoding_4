@@ -1,6 +1,3 @@
-const postList = document.querySelector("main-app post-list");
-console.log(postList);
-
 const Home = {
   async init() {
     await this._initialData();

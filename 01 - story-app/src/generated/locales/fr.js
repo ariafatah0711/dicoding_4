@@ -30,6 +30,7 @@
 's90a714a4349ca0f1': `déconnexion`,
 's94a644b5e0880579': `nom d'utilisateur`,
 's9a6832609fd9c1bf': `adresse e-mail`,
+'sa52127387350c01a': `réinitialiser les paramètres`,
 'sb265cc26dbb527f9': `changer de nom`,
 'sb56798071baac29e': `tableau de bord`,
 'sb7c4c1e6784787df': `profil`,
@@ -40,6 +41,7 @@
 'sdb40d268bbd1a81c': `changer de langue`,
 'sdeec2d9bd0d9a355': `bleu`,
 'se889b38b74f47e2d': `entrez un texte de 10 à 125 caractères`,
+'se96192ff1de6ff4d': `Supprimer le compte`,
 'sf31e8cf85d601d2a': `précédent`,
     };
   

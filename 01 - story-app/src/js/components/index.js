@@ -1,13 +1,15 @@
 import "./header-app";
-import "./main-app";
 import "./hero-app";
 import "./dashboard-app";
+import "./setting-app";
+import "./account-app";
 import "./footer-app";
 
 // card
 import "./card/post-list";
 import "./card/post-item";
 import "./card/post-pagination";
+import "./card/card-profile";
 
 // form
 import "./form/add-story";

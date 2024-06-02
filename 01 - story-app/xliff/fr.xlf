@@ -130,6 +130,14 @@
   <source>ganti kata sandi</source>
   <target>changer de mot de passe</target>
 </trans-unit>
+<trans-unit id="se96192ff1de6ff4d">
+  <source>hapus akun</source>
+  <target>Supprimer le compte</target>
+</trans-unit>
+<trans-unit id="sa52127387350c01a">
+  <source>setel ulang pengaturan</source>
+  <target>réinitialiser les paramètres</target>
+</trans-unit>
 </body>
 </file>
 </xliff>

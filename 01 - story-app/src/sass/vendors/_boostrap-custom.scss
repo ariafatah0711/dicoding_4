@@ -8,19 +8,22 @@
 //
 // Variables
 //
+$width-tablet: 992px;
+$width-mobile: 768px;
 
 
 //
 // Mixins
 //
-@mixin media-mobile {
-    @media (min-width: 768px) {
+
+@mixin media-tablet {
+    @media (max-width: $width-tablet) {
       @content;
     }
 }
 
-@mixin media-tablet {
-    @media (min-width: 992px) {
+@mixin media-mobile {
+    @media (max-width: $width-mobile) {
       @content;
     }
 }
@@ -33,6 +36,7 @@
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
 }
+
 @mixin pointer {
     &:hover {
         cursor: pointer;
@@ -46,10 +50,35 @@ span {
 //
 // main content
 //
-// main {
-//     min-height: 90vh !important;
-// }
 
+// padded
+.padded-10, .padded-20 {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-sizing: border-box;
+}
+
+.padded-10 {padding: 0 10%;}
+.padded-20 {padding: 0 20%;}
+.p-md-wrap {
+    @include wrap-line-text();
+    -webkit-line-clamp: 1;
+}
+
+@include media-tablet() {
+    .padded-20 {padding: 0 20%;}
+    .p-md-wrap {-webkit-line-clamp: 2;}
+}
+
+@include media-mobile() {
+    .padded-10 {padding: 0 5%;}
+    .padded-20 {padding: 0 2%;}
+    account-app.padded-20 {padding: 0 2%;}
+    .p-md-wrap {-webkit-line-clamp: 3;}
+}
+
+// account
 .account-app {
     display: flex !important;
 
@@ -67,36 +96,30 @@ span {
     .account-username, .account-password {
         display: grid;
         flex-direction: row;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 2fr;
         width: 100%;
+        .col-auto {
+            display: flex;
+            flex-direction: row;
+            gap: 01rem;
+            button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+            }
+        }
     }
-}
 
-// padded
-.padded-10, .padded-20 {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    box-sizing: border-box;
-}
-.padded-10 {padding: 0 5%;}
-.padded-20 {padding: 0 10%;}
+    @include media-mobile() {
+        .account-header {
+            grid-template-columns: 1fr;
+            flex-direction: column;
+        }
+        .account-username, .account-password {
+            grid-template-columns: 1fr;
+            flex-direction: column;
+        }
 
-.p-md-wrap {
-    @include wrap-line-text()
-}
-
-// @media screen and (min-width: 768px) {
-// }
-// @media screen and (min-width: 992px) {
-// }
-
-@include media-mobile() {
-    .padded-20 {padding: 0 20%;}
-    .p-md-wrap {-webkit-line-clamp: 2;}
-}
-
-@include media-tablet() {
-    .padded-10 {padding: 0 10%;}
-    .p-md-wrap {-webkit-line-clamp: 1;}
+    }
 }

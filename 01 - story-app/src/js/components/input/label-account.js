@@ -17,7 +17,7 @@ class LabelAccount extends LitWithoutShadowDom {
     const user = html`
       <div class="mb-3 row account-header">
         <label for="staticUser" class="col-sm-2 col-form-label">${msg(`username`)}</label>
-        <div class="col-sm-10 col-form-value">
+        <div class="col-sm-10 col-form-value w-100">
           <input type="text" readonly class="form-control" id="staticUser" value="admin" />
         </div>
       </div>
@@ -26,7 +26,7 @@ class LabelAccount extends LitWithoutShadowDom {
     const email = html`
       <div class="mb-3 row account-header">
         <label for="staticEmail" class="col-sm-2 col-form-label">${msg(`alamat email`)}</label>
-        <div class="col-sm-10 col-form-value">
+        <div class="col-sm-10 col-form-value w-100">
           <input type="text" readonly class="form-control" id="staticEmail" value="admin@gmail.com" />
         </div>
       </div>
@@ -35,7 +35,7 @@ class LabelAccount extends LitWithoutShadowDom {
     const password = html`
       <div class="mb-3 row account-header">
         <label for="staticEmail" class="col-sm-2 col-form-label">${msg(`password`)}</label>
-        <div class="col-sm-10 col-form-value">
+        <div class="col-sm-10 col-form-value w-100">
           <input type="text" readonly class="form-control" id="staticEmail" value="********" />
         </div>
       </div>

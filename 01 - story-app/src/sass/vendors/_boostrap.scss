@@ -57,7 +57,7 @@
 // Tambahkan custom code di sini
 //
 @mixin box-shadow {
-    background: #ffffff;
+    // background: #ffffff;
     overflow: hidden;
     box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
     border-radius: 5px;
@@ -68,6 +68,8 @@
     @include box-shadow();
     
     .card-image {
+      display: flex;
+      min-height: 155px;
         position: relative;
         display: flex;
         overflow: hidden;
@@ -103,10 +105,47 @@
 }
 
 /* pagination */
-.pagination, .table {
-    @include box-shadow();
+.pagination {
+  @include box-shadow();
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 0.6rem;
+  // overflow-x: auto;
+  // scroll-snap-type: x mandatory;
+  // -webkit-overflow-scrolling: touch;
+
+  .page-item {
+    scroll-snap-align: center;
+  }
+  
+  .pagination .page-link {
+    flex-shrink: 0;
+  }
 }
 
+@media (max-width: 576px) {
+  .pagination {
+    box-shadow: none;
+    border-radius: none;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .page-item.active {
+    scroll-snap-align: center;
+  }
+}
+
+/* table */
+.table {
+  @include box-shadow();
+}
+
+/* nav */
 .nav-tabs button.active {
     @include box-shadow();
     border-radius: 1px;
@@ -118,6 +157,13 @@
 }
 
 /* theme */
+[data-bs-theme="blue"] {
+  .card {
+    box-shadow: none;
+    border-radius: none;
+  }
+}
+
 [data-bs-theme="blue"] {
     --bs-body-color-rgb: #{to-rgb($white)};
     --bs-body-bg: var(--bs-cyan);

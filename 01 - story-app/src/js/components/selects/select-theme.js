@@ -3,7 +3,7 @@ import LitWithoutShadowDom from "../base/LitWithoutShadowDom";
 import { msg, updateWhenLocaleChanges } from "@lit/localize";
 
 const KEY = "theme";
-const theme = sessionStorage.getItem(KEY);
+const theme = localStorage.getItem(KEY);
 const themes = {
   light: msg(`terang`),
   dark: msg(`gelap`),
@@ -36,7 +36,7 @@ class SelectTheme extends LitWithoutShadowDom {
   }
 
   _changeTheme(value) {
-    sessionStorage.setItem(KEY, value);
+    localStorage.setItem(KEY, value);
     window.location.reload();
   }
 

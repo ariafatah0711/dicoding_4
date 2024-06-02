@@ -28,8 +28,6 @@ class InputAccount extends LitWithoutShadowDom {
             minlength="4"
             maxlength="15"
           />
-        </div>
-        <div class="col-auto">
           <button type="submit" class="btn btn-primary mb-3">${msg(`kirim`)}</button>
         </div>
       </form>
@@ -50,8 +48,6 @@ class InputAccount extends LitWithoutShadowDom {
             minlength="4"
             maxlength="15"
           />
-        </div>
-        <div class="col-auto">
           <button type="submit" class="btn btn-primary mb-3">${msg(`kirim`)}</button>
         </div>
       </form>

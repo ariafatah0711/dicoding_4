@@ -22,6 +22,13 @@ class PostItem extends LitWithoutShadowDom {
     this.classList.add("col");
   }
 
+  firstUpdated() {
+    setTimeout(() => {
+      this.loading = false;
+      this.requestUpdate();
+    }, 1000);
+  }
+
   render() {
     const withLoading = html`
       ${this.loading
