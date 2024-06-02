@@ -42,6 +42,94 @@
   <source>tambahkan ceritamu</source>
   <target>add your story</target>
 </trans-unit>
+<trans-unit id="s87f398d5a8c139c0">
+  <source>terang</source>
+  <target>light</target>
+</trans-unit>
+<trans-unit id="s3d5ec69a6bb3472e">
+  <source>gelap</source>
+  <target>dark</target>
+</trans-unit>
+<trans-unit id="sdeec2d9bd0d9a355">
+  <source>biru</source>
+  <target>blue</target>
+</trans-unit>
+<trans-unit id="sdb40d268bbd1a81c">
+  <source>ganti bahasa</source>
+  <target>change language</target>
+</trans-unit>
+<trans-unit id="s2b940301421633c3">
+  <source>masukan deskripsi disini</source>
+  <target>enter description here</target>
+</trans-unit>
+<trans-unit id="s24eb6ed15e6253d7">
+  <source>deskripsi</source>
+  <target>description</target>
+</trans-unit>
+<trans-unit id="se889b38b74f47e2d">
+  <source>masukan text minimal 10-125 huruf</source>
+  <target>enter text minimum 10-125 characters</target>
+</trans-unit>
+<trans-unit id="sd535cd6798034923">
+  <source>kirim sebagai</source>
+  <target>send as</target>
+</trans-unit>
+<trans-unit id="sd93e3def078c6f4c">
+  <source>tamu</source>
+  <target>guest</target>
+</trans-unit>
+<trans-unit id="s25a08d8d86e134df">
+  <source>kirim</source>
+  <target>send</target>
+</trans-unit>
+<trans-unit id="s94a644b5e0880579">
+  <source>username</source>
+  <target>username</target>
+</trans-unit>
+<trans-unit id="s9a6832609fd9c1bf">
+  <source>alamat email</source>
+  <target>email address</target>
+</trans-unit>
+<trans-unit id="s4b1a493507b3a318">
+  <source>password</source>
+  <target>password</target>
+</trans-unit>
+<trans-unit id="sb265cc26dbb527f9">
+  <source>ganti nama</source>
+  <target>change name</target>
+</trans-unit>
+<trans-unit id="sd064987a26e82eb7">
+  <source>ganti tema</source>
+  <target>change theme</target>
+</trans-unit>
+<trans-unit id="s7e529dba6c35eb7a">
+  <source>last updated</source>
+  <target>last updated</target>
+</trans-unit>
+<trans-unit id="s62f49131afb567ec">
+  <source>data tidak ditemukan</source>
+  <target>data not found</target>
+</trans-unit>
+<trans-unit id="sf31e8cf85d601d2a">
+  <source>sebelumnya</source>
+  <target>previous</target>
+</trans-unit>
+<trans-unit id="s52c7e91ac3b4c3b1">
+  <source>berikutnya</source>
+  <target>next</target>
+</trans-unit>
+<trans-unit id="s4e88ffdb99e2ac13">
+  <source>tanggal</source>
+  <target>date</target>
+</trans-unit>
+<trans-unit id="s0f136ff2c086b760">
+  <source>reset</source>
+  <target>reset</target>
+</trans-unit>
+<trans-unit id="s791e05c31c49ee28">
+  <source>ganti kata sandi</source>
+  <target>change password</target>
+</trans-unit>
 </body>
 </file>
 </xliff>

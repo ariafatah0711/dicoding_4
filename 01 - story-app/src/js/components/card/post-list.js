@@ -1,5 +1,6 @@
 import { html } from "lit";
 import LitWithoutShadowDom from "../base/LitWithoutShadowDom";
+import { msg, updateWhenLocaleChanges } from "@lit/localize";
 import { differenceInYears, differenceInMonths, differenceInWeeks, differenceInDays } from "date-fns";
 
 class PostList extends LitWithoutShadowDom {
@@ -13,6 +14,7 @@ class PostList extends LitWithoutShadowDom {
 
   constructor() {
     super();
+    updateWhenLocaleChanges(this);
     this.currentTime = Date.now();
     this.data = [];
     this.chunk = 3;
@@ -72,12 +74,12 @@ class PostList extends LitWithoutShadowDom {
                     ,
                     description="${item.description}"
                     ,
-                    datePostAgo="Last updated ${this._timePostAgo(new Date(item.createdAt).getTime())}"
+                    datePostAgo="${msg(`last updated`)} ${this._timePostAgo(new Date(item.createdAt).getTime())}"
                     date="${this._time(item.createdAt)}"
                   ></post-item>`
               )}
             `
-          : html` <data-not-found> data tidak ada </data-not-found> `}
+          : html` <data-not-found>${msg(`data tidak ditemukan`)}</data-not-found> `}
       </div>
       ${this.status != "abonormal"
         ? html`
@@ -101,7 +103,7 @@ class PostList extends LitWithoutShadowDom {
             ,
             description="${item.description}"
             ,
-            datePostAgo="Last updated ${this._timePostAgo(new Date(item.createdAt).getTime())}"
+            datePostAgo="${msg(`last updated`)} ${this._timePostAgo(new Date(item.createdAt).getTime())}"
             date="${this._time(item.createdAt)}"
           ></post-item> `
       )}

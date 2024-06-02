@@ -1,14 +1,21 @@
 import { html } from "lit";
 import LitWithoutShadowDom from "../base/LitWithoutShadowDom";
+import { msg, updateWhenLocaleChanges } from "@lit/localize";
+
 const KEY = "theme";
-const themes = {
-  light: "terang",
-  dark: "gelap",
-  blue: "biru",
-};
 const theme = sessionStorage.getItem(KEY);
+const themes = {
+  light: msg(`terang`),
+  dark: msg(`gelap`),
+  blue: msg(`biru`),
+};
 
 class SelectTheme extends LitWithoutShadowDom {
+  constructor() {
+    super();
+    updateWhenLocaleChanges(this);
+  }
+
   firstUpdated() {
     const selectElement = this.renderRoot.querySelector("#floatingSelectGrid");
     selectElement.addEventListener("change", this._handleSelectChange.bind(this));
@@ -46,7 +53,7 @@ class SelectTheme extends LitWithoutShadowDom {
               `
           )}
         </select>
-        <label for="floatingSelectGrid">Ganti Thema</label>
+        <label for="floatingSelectGrid">${msg(`ganti bahasa`)}</label>
       </div>
     `;
   }

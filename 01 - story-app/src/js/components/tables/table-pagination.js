@@ -1,5 +1,6 @@
 import { html } from "lit";
 import LitWithoutShadowDom from "../base/LitWithoutShadowDom";
+import { msg, updateWhenLocaleChanges } from "@lit/localize";
 
 class TablePagination extends LitWithoutShadowDom {
   static properties = {
@@ -12,6 +13,7 @@ class TablePagination extends LitWithoutShadowDom {
 
   constructor() {
     super();
+    updateWhenLocaleChanges(this);
     // this._changeStatus();
   }
 
@@ -51,12 +53,12 @@ class TablePagination extends LitWithoutShadowDom {
           ${this.status == "prev"
             ? html`
                 <li class="page-item disabled">
-                  <span class="page-link">Previous</span>
+                  <span class="page-link">${msg(`sebelumnya`)}</span>
                 </li>
               `
             : html`
                 <li class="page-item">
-                  <a class="page-link" href="#" @click=${(e) => this.handleClick(e, this.chunk - 1)}>Previous</a>
+                  <a class="page-link" href="#" @click=${(e) => this.handleClick(e, this.chunk - 1)}>${msg(`sebelumnya`)}</a>
                 </li>
               `}
           ${pages.map(
@@ -74,12 +76,12 @@ class TablePagination extends LitWithoutShadowDom {
           ${this.status == "next"
             ? html`
                 <li class="page-item disabled">
-                  <span class="page-link">Next</span>
+                  <span class="page-link">${msg(`berikutnya`)}</span>
                 </li>
               `
             : html`
                 <li class="page-item">
-                  <a class="page-link" href="#" @click=${(e) => this.handleClick(e, this.chunk + 1)}>Next</a>
+                  <a class="page-link" href="#" @click=${(e) => this.handleClick(e, this.chunk + 1)}>${msg(`berikutnya`)}</a>
                 </li>
               `}
         </ul>

@@ -1,6 +1,6 @@
 import { html } from "lit";
 import { allLocales } from "../../../generated/locale-codes";
-import { updateWhenLocaleChanges } from "@lit/localize";
+import { msg, updateWhenLocaleChanges } from "@lit/localize";
 import { getLocale, localeNames, saveLocaleToLocalStorage } from "../../localization";
 import LitWithoutShadowDom from "../base/LitWithoutShadowDom";
 
@@ -26,7 +26,7 @@ class SelectLanguage extends LitWithoutShadowDom {
             return html` <option value=${locale} ?selected=${locale == getLocale()}>${localeNames[locale]}</option> `;
           })}
         </select>
-        <label for="floatingSelectGrid">Ganti Bahasa</label>
+        <label for="floatingSelectGrid">${msg(`ganti tema`)}</label>
       </div>
     `;
   }

@@ -1,5 +1,6 @@
 import { html } from "lit";
 import LitWithoutShadowDom from "../base/LitWithoutShadowDom";
+import { msg, updateWhenLocaleChanges } from "@lit/localize";
 
 class TableApp extends LitWithoutShadowDom {
   static properties = {
@@ -13,6 +14,7 @@ class TableApp extends LitWithoutShadowDom {
 
   constructor() {
     super();
+    updateWhenLocaleChanges(this);
     this.data = [];
     this._fetchData();
   }
@@ -75,8 +77,8 @@ class TableApp extends LitWithoutShadowDom {
         <thead class="table-dark">
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Deskripsi</th>
-            <th scope="col">Tanggal</th>
+            <th scope="col">${msg(`deskripsi`)}</th>
+            <th scope="col">${msg(`tanggal`)}</th>
           </tr>
         </thead>
         <tbody>

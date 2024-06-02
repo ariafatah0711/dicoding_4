@@ -12,7 +12,6 @@ class DashboardApp extends LitWithoutShadowDom {
 
   _changeTab(tab) {
     sessionStorage.setItem("tab", tab);
-    console.log(tab);
   }
 
   render() {

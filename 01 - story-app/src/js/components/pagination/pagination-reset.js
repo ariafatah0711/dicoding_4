@@ -1,5 +1,6 @@
 import { html } from "lit";
 import LitWithoutShadowDom from "../base/LitWithoutShadowDom";
+import { msg, updateWhenLocaleChanges } from "@lit/localize";
 
 class PaginationReset extends LitWithoutShadowDom {
   static properties = {
@@ -8,6 +9,7 @@ class PaginationReset extends LitWithoutShadowDom {
 
   constructor() {
     super();
+    updateWhenLocaleChanges(this);
   }
 
   handleClick() {
@@ -20,7 +22,7 @@ class PaginationReset extends LitWithoutShadowDom {
       <nav aria-label="..." class="d-flex justify-content-center">
         <ul class="pagination">
           <li class="page-item">
-            <a class="page-link" href="#" @click=${this.handleClick()}>reset</a>
+            <a class="page-link" href="#" @click=${this.handleClick()}>${msg(`reset`)}</a>
           </li>
         </ul>
       </nav>

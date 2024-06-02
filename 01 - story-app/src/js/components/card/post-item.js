@@ -64,18 +64,3 @@ class PostItem extends LitWithoutShadowDom {
 }
 
 customElements.define("post-item", PostItem);
-
-/*
-<div class="col">
-<div class="card h-100">
-  <img src="./image/example.png" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">This is a short card.</p>
-  </div>
-  <div class="card-footer">
-    <small class="text-body-secondary">Last updated 3 mins ago</small>
-  </div>
-</div>
-</div>
-*/

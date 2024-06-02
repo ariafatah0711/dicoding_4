@@ -1,6 +1,6 @@
 import { html, css, LitElement } from "lit";
-import { msg, updateWhenLocaleChanges } from "@lit/localize";
 import LitWithoutShadowDom from "./base/LitWithoutShadowDom";
+import { msg, updateWhenLocaleChanges } from "@lit/localize";
 
 class HeroAppShadow extends LitWithoutShadowDom {
   static properties = {
@@ -54,7 +54,7 @@ class HeroAppShadow extends LitWithoutShadowDom {
         content = html`<h1 class="${textBoostrap}">${msg(`akun`)}</h1>`;
         break;
       default:
-        content = html``; // Jika type tidak dikenali, tidak menampilkan apa pun
+        content = html``;
     }
 
     return html`

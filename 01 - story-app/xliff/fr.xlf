@@ -36,9 +36,99 @@
 </trans-unit>
 <trans-unit id="s51d0f228b37fd03e">
   <source>aku ingin denger cerita kamu hari ini</source>
+  <target>Je veux entendre ton histoire aujourd'hui</target>
 </trans-unit>
 <trans-unit id="s04a2bb60eb38f246">
   <source>tambahkan ceritamu</source>
+  <target>ajoute ton histoire</target>
+</trans-unit>
+<trans-unit id="s87f398d5a8c139c0">
+  <source>terang</source>
+  <target>clair</target>
+</trans-unit>
+<trans-unit id="s3d5ec69a6bb3472e">
+  <source>gelap</source>
+  <target>sombre</target>
+</trans-unit>
+<trans-unit id="sdeec2d9bd0d9a355">
+  <source>biru</source>
+  <target>bleu</target>
+</trans-unit>
+<trans-unit id="sdb40d268bbd1a81c">
+  <source>ganti bahasa</source>
+  <target>changer de langue</target>
+</trans-unit>
+<trans-unit id="s2b940301421633c3">
+  <source>masukan deskripsi disini</source>
+  <target>entrez la description ici</target>
+</trans-unit>
+<trans-unit id="s24eb6ed15e6253d7">
+  <source>deskripsi</source>
+  <target>description</target>
+</trans-unit>
+<trans-unit id="se889b38b74f47e2d">
+  <source>masukan text minimal 10-125 huruf</source>
+  <target>entrez un texte de 10 à 125 caractères</target>
+</trans-unit>
+<trans-unit id="sd535cd6798034923">
+  <source>kirim sebagai</source>
+  <target>envoyer en tant que</target>
+</trans-unit>
+<trans-unit id="sd93e3def078c6f4c">
+  <source>tamu</source>
+  <target>invité</target>
+</trans-unit>
+<trans-unit id="s25a08d8d86e134df">
+  <source>kirim</source>
+  <target>envoyer</target>
+</trans-unit>
+<trans-unit id="s94a644b5e0880579">
+  <source>username</source>
+  <target>nom d'utilisateur</target>
+</trans-unit>
+<trans-unit id="s9a6832609fd9c1bf">
+  <source>alamat email</source>
+  <target>adresse e-mail</target>
+</trans-unit>
+<trans-unit id="s4b1a493507b3a318">
+  <source>password</source>
+  <target>mot de passe</target>
+</trans-unit>
+<trans-unit id="sb265cc26dbb527f9">
+  <source>ganti nama</source>
+  <target>changer de nom</target>
+</trans-unit>
+<trans-unit id="sd064987a26e82eb7">
+  <source>ganti tema</source>
+  <target>changer de thème</target>
+</trans-unit>
+<trans-unit id="s7e529dba6c35eb7a">
+  <source>last updated</source>
+  <target>dernière mise à jour</target>
+</trans-unit>
+<trans-unit id="s62f49131afb567ec">
+  <source>data tidak ditemukan</source>
+  <target>données non trouvées</target>
+</trans-unit>
+<trans-unit id="sf31e8cf85d601d2a">
+  <source>sebelumnya</source>
+  <target>précédent</target>
+</trans-unit>
+<trans-unit id="s52c7e91ac3b4c3b1">
+  <source>berikutnya</source>
+  <target>suivant</target>
+</trans-unit>
+<trans-unit id="s4e88ffdb99e2ac13">
+  <source>tanggal</source>
+  <target>la date</target>
+</trans-unit>
+<trans-unit id="s0f136ff2c086b760">
+  <source>reset</source>
+  <target>réinitialiser</target>
+</trans-unit>
+<trans-unit id="s791e05c31c49ee28">
+  <source>ganti kata sandi</source>
+  <target>changer de mot de passe</target>
 </trans-unit>
 </body>
 </file>
