@@ -42,7 +42,7 @@ class LabelAccount extends LitWithoutShadowDom {
       <div class="mb-3 row account-header">
         <label for="staticEmail" class="col-sm-2 col-form-label">${msg(`password`)}</label>
         <div class="col-sm-10 col-form-value w-100">
-          <input type="text" readonly class="form-control" id="staticEmail" value="********" />
+          <input type="text" readonly class="form-control" id="staticPassword" value="********" />
         </div>
       </div>
     `;

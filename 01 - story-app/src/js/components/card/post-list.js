@@ -47,7 +47,9 @@ class PostList extends LitWithoutShadowDom {
       window.location.reload();
     }
 
-    if (parseInt(this.chunk) + 1 == this.totalChunk) {
+    if (this.totalChunk == 1) {
+      this.status = 'both';
+    } else if (parseInt(this.chunk) + 1 == this.totalChunk) {
       this.status = 'next';
     } else if (this.chunk == 0) {
       this.status = 'prev';

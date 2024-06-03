@@ -26,11 +26,12 @@ class TableApp extends LitWithoutShadowDom {
       const data = responseJson.listStory;
       const chunkedData =
         this.anonim == 'true' ? this._chunkArrayAnonym(data, 9) : this._chunkArrayUser(data, 9);
+
       if (!chunkedData.length == 0) {
         this.chunk = sessionStorage.getItem(this.tab) ? sessionStorage.getItem(this.tab) : 0;
         this.totalChunk = chunkedData.length;
         this.data = chunkedData[this.chunk];
-        console.log(this.data);
+
         this._checkStatus();
       } else {
         this.data = chunkedData;
@@ -46,7 +47,9 @@ class TableApp extends LitWithoutShadowDom {
       window.location.reload();
     }
 
-    if (parseInt(this.chunk) + 1 == this.totalChunk) {
+    if (this.totalChunk == 1) {
+      this.status = 'both';
+    } else if (parseInt(this.chunk) + 1 == this.totalChunk) {
       this.status = 'next';
     } else if (this.chunk == 0) {
       this.status = 'prev';
@@ -73,7 +76,6 @@ class TableApp extends LitWithoutShadowDom {
     }
 
     this.chunk = 0;
-    console.log(result);
 
     return result;
   }
@@ -108,13 +110,13 @@ class TableApp extends LitWithoutShadowDom {
                             href="#"
                             class="btn btn-primary"
                             data-bs-toggle="modal"
-                            data-bs-target="#modal_${index}"
+                            data-bs-target="#modal_${this.tab}_${index}"
                             ><i class="bi bi-eye"></i
                           ></a>
                           <a href="#" class="btn btn-primary"><i class="bi bi-pencil"></i></a>
                           <a href="#" class="btn btn-primary"><i class="bi bi-trash"></i></a>
                           <modal-item
-                            target="modal_${index}"
+                            target="modal_${this.tab}_${index}"
                             name="${item.name}"
                             date="${this._time(item.createdAt)}"
                             img="${item.photoUrl}"

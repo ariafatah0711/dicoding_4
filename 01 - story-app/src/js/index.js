@@ -2,9 +2,9 @@
 import '../sass/main.scss';
 
 // utils
+import './utils/locale';
 import './utils/routes';
 import './utils/theme';
-import './utils/locale';
 
 // import our components
 import './components/index';

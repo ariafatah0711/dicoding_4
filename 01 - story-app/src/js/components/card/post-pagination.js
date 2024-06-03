@@ -36,7 +36,7 @@ class postPagination extends LitWithoutShadowDom {
     return html`
       <nav aria-label="..." class="d-flex justify-content-center">
         <ul class="pagination">
-          ${this.status == 'prev'
+          ${this.status == 'prev' || this.status == 'both'
             ? html`
                 <li class="page-item disabled">
                   <span class="page-link">${msg(`sebelumnya`)}</span>
@@ -62,7 +62,7 @@ class postPagination extends LitWithoutShadowDom {
                   </li>`}
             `,
           )}
-          ${this.status == 'next'
+          ${this.status == 'next' || this.status == 'both'
             ? html`
                 <li class="page-item disabled">
                   <span class="page-link">${msg(`berikutnya`)}</span>
