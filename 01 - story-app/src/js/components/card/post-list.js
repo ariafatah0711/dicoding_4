@@ -1,7 +1,12 @@
-import { html } from "lit";
-import LitWithoutShadowDom from "../base/LitWithoutShadowDom";
-import { msg, updateWhenLocaleChanges } from "@lit/localize";
-import { differenceInYears, differenceInMonths, differenceInWeeks, differenceInDays } from "date-fns";
+import { html } from 'lit';
+import LitWithoutShadowDom from '../base/LitWithoutShadowDom';
+import { msg, updateWhenLocaleChanges } from '@lit/localize';
+import {
+  differenceInYears,
+  differenceInMonths,
+  differenceInWeeks,
+  differenceInDays,
+} from 'date-fns';
 
 class PostList extends LitWithoutShadowDom {
   static properties = {
@@ -23,31 +28,31 @@ class PostList extends LitWithoutShadowDom {
 
   async _fetchData() {
     try {
-      const response = await fetch("DATA.json");
+      const response = await fetch('DATA.json');
       const responseJson = await response.json();
       const data = responseJson.listStory;
       const chunkData = this._chunkArrayUser(data, 9);
-      this.chunk = sessionStorage.getItem("home") ? sessionStorage.getItem("home") : 0;
+      this.chunk = sessionStorage.getItem('home') ? sessionStorage.getItem('home') : 0;
       this.totalChunk = chunkData.length;
       this.data = chunkData[this.chunk];
       this._checkStatus();
     } catch (error) {
-      console.error("Error fetching data:", error);
+      console.error('Error fetching data:', error);
     }
   }
 
   _checkStatus() {
     if (!this.data) {
-      sessionStorage.setItem("home", 0);
+      sessionStorage.setItem('home', 0);
       window.location.reload();
     }
 
     if (parseInt(this.chunk) + 1 == this.totalChunk) {
-      this.status = "next";
+      this.status = 'next';
     } else if (this.chunk == 0) {
-      this.status = "prev";
+      this.status = 'prev';
     } else {
-      this.status = "normal";
+      this.status = 'normal';
     }
   }
 
@@ -74,14 +79,16 @@ class PostList extends LitWithoutShadowDom {
                     ,
                     description="${item.description}"
                     ,
-                    datePostAgo="${msg(`last updated`)} ${this._timePostAgo(new Date(item.createdAt).getTime())}"
+                    datePostAgo="${msg(`last updated`)} ${this._timePostAgo(
+                      new Date(item.createdAt).getTime(),
+                    )}"
                     date="${this._time(item.createdAt)}"
-                  ></post-item>`
+                  ></post-item>`,
               )}
             `
           : html` <data-not-found>${msg(`data tidak ditemukan`)}</data-not-found> `}
       </div>
-      ${this.status != "abonormal"
+      ${this.status != 'abonormal'
         ? html`
           <post-pagination
           chunk=${this.chunk}
@@ -103,10 +110,12 @@ class PostList extends LitWithoutShadowDom {
             ,
             description="${item.description}"
             ,
-            datePostAgo="${msg(`last updated`)} ${this._timePostAgo(new Date(item.createdAt).getTime())}"
+            datePostAgo="${msg(`last updated`)} ${this._timePostAgo(
+              new Date(item.createdAt).getTime(),
+            )}"
             date="${this._time(item.createdAt)}"
             id="${item.id}"
-          ></post-item> `
+          ></post-item> `,
       )}
       </div>
       <post-pagination
@@ -127,10 +136,10 @@ class PostList extends LitWithoutShadowDom {
     let month = date.getMonth() + 1;
     let day = date.getDate();
 
-    let formattedMonth = month < 10 ? "0" + month : month;
-    let formattedDay = day < 10 ? "0" + day : day;
+    let formattedMonth = month < 10 ? '0' + month : month;
+    let formattedDay = day < 10 ? '0' + day : day;
 
-    const withSlashes = [formattedDay, formattedMonth, year].join("/");
+    const withSlashes = [formattedDay, formattedMonth, year].join('/');
     return withSlashes;
   }
 
@@ -147,17 +156,17 @@ class PostList extends LitWithoutShadowDom {
     let result;
 
     if (yearsDifference >= 1) {
-      result = `${yearsDifference} year${yearsDifference > 1 ? "s" : ""}`;
+      result = `${yearsDifference} year${yearsDifference > 1 ? 's' : ''}`;
     } else if (monthsDifference >= 1) {
-      result = `${monthsDifference} month${monthsDifference > 1 ? "s" : ""}`;
+      result = `${monthsDifference} month${monthsDifference > 1 ? 's' : ''}`;
     } else if (weeksDifference >= 1) {
-      result = `${weeksDifference} week${weeksDifference > 1 ? "s" : ""}`;
+      result = `${weeksDifference} week${weeksDifference > 1 ? 's' : ''}`;
     } else {
-      result = `${daysDifference} day${daysDifference > 1 ? "s" : ""}`;
+      result = `${daysDifference} day${daysDifference > 1 ? 's' : ''}`;
     }
 
     return result;
   }
 }
 
-customElements.define("post-list", PostList);
+customElements.define('post-list', PostList);

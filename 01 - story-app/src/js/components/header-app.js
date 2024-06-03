@@ -1,6 +1,6 @@
-import { html } from "lit";
-import LitWithoutShadowDom from "./base/LitWithoutShadowDom";
-import { msg, updateWhenLocaleChanges } from "@lit/localize";
+import { html } from 'lit';
+import LitWithoutShadowDom from './base/LitWithoutShadowDom';
+import { msg, updateWhenLocaleChanges } from '@lit/localize';
 
 class HeaderApp extends LitWithoutShadowDom {
   static properties = {
@@ -19,17 +19,17 @@ class HeaderApp extends LitWithoutShadowDom {
     super();
     updateWhenLocaleChanges(this);
 
-    this.home = "/";
-    this.add = "/user/add-story.html";
-    this.dashboard = "/user/dashboard.html";
-    this.setting = "/user/setting.html";
-    this.account = "/user/account.html";
+    this.home = '/';
+    this.add = '/user/add-story.html';
+    this.dashboard = '/user/dashboard.html';
+    this.setting = '/user/setting.html';
+    this.account = '/user/account.html';
 
     this._login();
   }
 
   _login() {
-    const key = "login";
+    const key = 'login';
     if (!localStorage.getItem(key)) {
       localStorage.setItem(key, false);
     }
@@ -39,12 +39,12 @@ class HeaderApp extends LitWithoutShadowDom {
   }
 
   _loginUser() {
-    const key = "login";
+    const key = 'login';
     localStorage.setItem(key, true);
   }
 
   _logoutUser() {
-    const key = "login";
+    const key = 'login';
     localStorage.setItem(key, false);
   }
 
@@ -103,7 +103,13 @@ class HeaderApp extends LitWithoutShadowDom {
       <nav class="navbar bg-body-tertiary px-md-5 text-capitalize">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
-            <img src="${this.logo}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top" />
+            <img
+              src="${this.logo}"
+              alt="Logo"
+              width="30"
+              height="24"
+              class="d-inline-block align-text-top"
+            />
             ${this.brandName}
           </a>
           <button
@@ -124,12 +130,19 @@ class HeaderApp extends LitWithoutShadowDom {
           >
             <div class="offcanvas-header">
               <h5 class="offcanvas-title" id="offcanvasNavbarLabel">${this.brandName}</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
             </div>
             <div class="offcanvas-body d-lg-block">
               <ul class="nav justify-content-end row">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="${this.home}">${msg(`beranda`)}</a>
+                  <a class="nav-link active" aria-current="page" href="${this.home}"
+                    >${msg(`beranda`)}</a
+                  >
                 </li>
                 ${this.login ? loginTrueAdd : null}
                 <li class="nav-item dropdown">
@@ -152,11 +165,19 @@ class HeaderApp extends LitWithoutShadowDom {
           <div class="collapse d-none d-md-flex flex-row ms-auto ">
             <ul class="navbar-nav container-fluid flex-row gap-5">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="${this.home}">${msg(`beranda`)}</a>
+                <a class="nav-link active" aria-current="page" href="${this.home}"
+                  >${msg(`beranda`)}</a
+                >
               </li>
               ${this.login ? loginTrueAdd : null}
               <li class="nav-item dropdown pe-5">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
                   ${msg(`profil`)}
                 </a>
                 ${this.login ? loginNav : logoutNav}
@@ -169,4 +190,4 @@ class HeaderApp extends LitWithoutShadowDom {
   }
 }
 
-customElements.define("header-app", HeaderApp);
+customElements.define('header-app', HeaderApp);

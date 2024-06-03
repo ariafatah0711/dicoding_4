@@ -1,6 +1,6 @@
-import { html } from "lit";
-import LitWithoutShadowDom from "../base/LitWithoutShadowDom";
-import { msg, updateWhenLocaleChanges } from "@lit/localize";
+import { html } from 'lit';
+import LitWithoutShadowDom from '../base/LitWithoutShadowDom';
+import { msg, updateWhenLocaleChanges } from '@lit/localize';
 
 class AddStory extends LitWithoutShadowDom {
   static properties = {
@@ -10,7 +10,7 @@ class AddStory extends LitWithoutShadowDom {
   constructor() {
     super();
     updateWhenLocaleChanges(this);
-    this.name = "aria";
+    this.name = 'aria';
   }
 
   render() {
@@ -41,17 +41,24 @@ class AddStory extends LitWithoutShadowDom {
           />
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" />
+          <input
+            class="form-check-input"
+            type="checkbox"
+            role="switch"
+            id="flexSwitchCheckDefault"
+          />
           <label class="form-check-label" for="flexSwitchCheckDefault"
             >${msg(`kirim sebagai`)} ${this.name}/${msg(`tamu`)}?</label
           >
         </div>
         <div class="d-grid gap-2 col-6 mx-auto">
-          <button type="button" class="btn btn-outline-primary" onclick="window.location.href='/'">${msg(`kirim`)}</button>
+          <button type="button" class="btn btn-outline-primary" onclick="window.location.href='/'">
+            ${msg(`kirim`)}
+          </button>
         </div>
       </form>
     `;
   }
 }
 
-customElements.define("add-story", AddStory);
+customElements.define('add-story', AddStory);

@@ -1,6 +1,6 @@
-import { html } from "lit";
-import LitWithoutShadowDom from "../base/LitWithoutShadowDom";
-import { msg, updateWhenLocaleChanges } from "@lit/localize";
+import { html } from 'lit';
+import LitWithoutShadowDom from '../base/LitWithoutShadowDom';
+import { msg, updateWhenLocaleChanges } from '@lit/localize';
 
 class InputAccount extends LitWithoutShadowDom {
   static properties = {
@@ -53,7 +53,7 @@ class InputAccount extends LitWithoutShadowDom {
       </form>
     `;
 
-    if (this.type == "user") {
+    if (this.type == 'user') {
       return user;
     } else {
       return password;
@@ -61,4 +61,4 @@ class InputAccount extends LitWithoutShadowDom {
   }
 }
 
-customElements.define("input-account", InputAccount);
+customElements.define('input-account', InputAccount);

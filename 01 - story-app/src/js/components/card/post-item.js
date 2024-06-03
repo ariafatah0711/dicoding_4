@@ -1,5 +1,5 @@
-import { html, css } from "lit";
-import LitWithoutShadowDom from "../base/LitWithoutShadowDom";
+import { html, css } from 'lit';
+import LitWithoutShadowDom from '../base/LitWithoutShadowDom';
 
 class PostItem extends LitWithoutShadowDom {
   static properties = {
@@ -20,7 +20,7 @@ class PostItem extends LitWithoutShadowDom {
 
   constructor() {
     super();
-    this.classList.add("col");
+    this.classList.add('col');
   }
 
   firstUpdated() {
@@ -78,4 +78,4 @@ class PostItem extends LitWithoutShadowDom {
   }
 }
 
-customElements.define("post-item", PostItem);
+customElements.define('post-item', PostItem);

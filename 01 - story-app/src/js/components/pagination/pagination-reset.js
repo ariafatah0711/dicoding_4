@@ -1,6 +1,6 @@
-import { html } from "lit";
-import LitWithoutShadowDom from "../base/LitWithoutShadowDom";
-import { msg, updateWhenLocaleChanges } from "@lit/localize";
+import { html } from 'lit';
+import LitWithoutShadowDom from '../base/LitWithoutShadowDom';
+import { msg, updateWhenLocaleChanges } from '@lit/localize';
 
 class PaginationReset extends LitWithoutShadowDom {
   static properties = {
@@ -30,4 +30,4 @@ class PaginationReset extends LitWithoutShadowDom {
   }
 }
 
-customElements.define("pagination-reset", PaginationReset);
+customElements.define('pagination-reset', PaginationReset);

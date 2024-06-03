@@ -1,5 +1,5 @@
-import { html } from "lit";
-import LitWithoutShadowDom from "./base/LitWithoutShadowDom";
+import { html } from 'lit';
+import LitWithoutShadowDom from './base/LitWithoutShadowDom';
 
 class DashboardApp extends LitWithoutShadowDom {
   static properties = {
@@ -11,17 +11,17 @@ class DashboardApp extends LitWithoutShadowDom {
   }
 
   _changeTab(tab) {
-    sessionStorage.setItem("tab", tab);
+    sessionStorage.setItem('tab', tab);
   }
 
   render() {
-    const tabUser = sessionStorage.getItem("tab") === "user" ? true : false;
+    const tabUser = sessionStorage.getItem('tab') === 'user' ? true : false;
 
     return html`
       <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
           <button
-            class="nav-link ${tabUser ? "active" : ""}"
+            class="nav-link ${tabUser ? 'active' : ''}"
             id="home-tab"
             data-bs-toggle="tab"
             data-bs-target="#home-tab-pane"
@@ -29,14 +29,14 @@ class DashboardApp extends LitWithoutShadowDom {
             role="tab"
             aria-controls="home-tab-pane"
             aria-selected="${tabUser}"
-            @click=${() => this._changeTab("user")}
+            @click=${() => this._changeTab('user')}
           >
             user
           </button>
         </li>
         <li class="nav-item" role="presentation">
           <button
-            class="nav-link ${tabUser ? "" : "active"}"
+            class="nav-link ${tabUser ? '' : 'active'}"
             id="profile-tab"
             data-bs-toggle="tab"
             data-bs-target="#profile-tab-pane"
@@ -44,7 +44,7 @@ class DashboardApp extends LitWithoutShadowDom {
             role="tab"
             aria-controls="profile-tab-pane"
             aria-selected="${!tabUser}"
-            @click=${() => this._changeTab("anonim")}
+            @click=${() => this._changeTab('anonim')}
           >
             tamu
           </button>
@@ -52,7 +52,7 @@ class DashboardApp extends LitWithoutShadowDom {
       </ul>
       <div class="tab-content" id="myTabContent">
         <div
-          class="tab-pane fade ${tabUser ? "show active" : ""}"
+          class="tab-pane fade ${tabUser ? 'show active' : ''}"
           id="home-tab-pane"
           role="tabpanel"
           aria-labelledby="home-tab"
@@ -61,7 +61,7 @@ class DashboardApp extends LitWithoutShadowDom {
           <table-user-app anonim="false"></table-user-app>
         </div>
         <div
-          class="tab-pane fade ${tabUser ? "" : "show active"}"
+          class="tab-pane fade ${tabUser ? '' : 'show active'}"
           id="profile-tab-pane"
           role="tabpanel"
           aria-labelledby="profile-tab"
@@ -74,4 +74,4 @@ class DashboardApp extends LitWithoutShadowDom {
   }
 }
 
-customElements.define("dashboard-app", DashboardApp);
+customElements.define('dashboard-app', DashboardApp);

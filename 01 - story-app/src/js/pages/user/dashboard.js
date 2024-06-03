@@ -1,4 +1,4 @@
-const dashboardApp = document.querySelector("dashboard-app");
+const dashboardApp = document.querySelector('dashboard-app');
 
 const Dashboard = {
   async init() {
@@ -16,16 +16,16 @@ const Dashboard = {
   },
 
   _checkTab() {
-    if (!sessionStorage.getItem("tab")) {
-      const tab = sessionStorage.getItem("tab") ? sessionStorage.getItem("tab") : "user";
-      sessionStorage.setItem("tab", "user");
+    if (!sessionStorage.getItem('tab')) {
+      const tab = sessionStorage.getItem('tab') ? sessionStorage.getItem('tab') : 'user';
+      sessionStorage.setItem('tab', 'user');
     }
-    const tab = sessionStorage.getItem("tab") ? sessionStorage.getItem("tab") : "user";
-    dashboardApp.setAttribute("tab", tab);
+    const tab = sessionStorage.getItem('tab') ? sessionStorage.getItem('tab') : 'user';
+    dashboardApp.setAttribute('tab', tab);
   },
 
   _changeTab(tab) {
-    sessionStorage.setItem("tab", tab);
+    sessionStorage.setItem('tab', tab);
     console.log(tab);
   },
 

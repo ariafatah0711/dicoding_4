@@ -1,6 +1,6 @@
-import { html, css, LitElement } from "lit";
-import LitWithoutShadowDom from "./base/LitWithoutShadowDom";
-import { msg, updateWhenLocaleChanges } from "@lit/localize";
+import { html, css, LitElement } from 'lit';
+import LitWithoutShadowDom from './base/LitWithoutShadowDom';
+import { msg, updateWhenLocaleChanges } from '@lit/localize';
 
 class HeroAppShadow extends LitElement {
   static properties = {
@@ -36,24 +36,26 @@ class HeroAppShadow extends LitElement {
     // const imgClass = "rounded mx-auto d-block py-3";
     // const textClass = "text-center pb-2";
 
-    const imgClass = "hero-img";
-    const textClass = "hero-title";
+    const imgClass = 'hero-img';
+    const textClass = 'hero-title';
 
     let content;
     switch (this.type) {
-      case "home":
-        content = html`<h1 class="${textClass}">${msg(`aku ingin denger cerita kamu hari ini`)}</h1>`;
+      case 'home':
+        content = html`<h1 class="${textClass}">
+          ${msg(`aku ingin denger cerita kamu hari ini`)}
+        </h1>`;
         break;
-      case "add":
+      case 'add':
         content = html`<h1 class="${textClass}">${msg(`tambahkan ceritamu`)}</h1>`;
         break;
-      case "dashboard":
+      case 'dashboard':
         content = html`<h1 class="${textClass}">${msg(`dasbor`)}</h1>`;
         break;
-      case "setting":
+      case 'setting':
         content = html`<h1 class="${textClass}">${msg(`pengaturan`)}</h1>`;
         break;
-      case "account":
+      case 'account':
         content = html`<h1 class="${textClass}">${msg(`akun`)}</h1>`;
         break;
       default:
@@ -67,4 +69,4 @@ class HeroAppShadow extends LitElement {
   }
 }
 
-customElements.define("hero-app", HeroAppShadow);
+customElements.define('hero-app', HeroAppShadow);

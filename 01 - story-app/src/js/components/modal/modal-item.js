@@ -1,5 +1,5 @@
-import { html } from "lit";
-import LitWithoutShadowDom from "../base/LitWithoutShadowDom";
+import { html } from 'lit';
+import LitWithoutShadowDom from '../base/LitWithoutShadowDom';
 
 class ModalItem extends LitWithoutShadowDom {
   static properties = {
@@ -15,12 +15,23 @@ class ModalItem extends LitWithoutShadowDom {
   }
   render() {
     return html`
-      <div class="modal fade" id="${this.target}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div
+        class="modal fade"
+        id="${this.target}"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
           <div class="modal-content">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="exampleModalLabel">${this.name}</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
             </div>
             <div class="modal-body">
               <img src="${this.img}" class="card-img-top" alt="..." />
@@ -40,4 +51,4 @@ class ModalItem extends LitWithoutShadowDom {
   }
 }
 
-customElements.define("modal-item", ModalItem);
+customElements.define('modal-item', ModalItem);

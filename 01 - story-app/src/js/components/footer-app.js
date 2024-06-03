@@ -1,5 +1,5 @@
-import { html } from "lit";
-import LitWithoutShadowDom from "./base/LitWithoutShadowDom";
+import { html } from 'lit';
+import LitWithoutShadowDom from './base/LitWithoutShadowDom';
 
 class FooterApp extends LitWithoutShadowDom {
   render() {
@@ -52,4 +52,4 @@ class FooterApp extends LitWithoutShadowDom {
   }
 }
 
-customElements.define("footer-app", FooterApp);
+customElements.define('footer-app', FooterApp);

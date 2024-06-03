@@ -1,6 +1,6 @@
-import { html } from "lit";
-import LitWithoutShadowDom from "../base/LitWithoutShadowDom";
-import { msg, updateWhenLocaleChanges } from "@lit/localize";
+import { html } from 'lit';
+import LitWithoutShadowDom from '../base/LitWithoutShadowDom';
+import { msg, updateWhenLocaleChanges } from '@lit/localize';
 
 class TableApp extends LitWithoutShadowDom {
   static properties = {
@@ -21,10 +21,11 @@ class TableApp extends LitWithoutShadowDom {
 
   async _fetchData() {
     try {
-      const response = await fetch("/DATA.json");
+      const response = await fetch('/DATA.json');
       const responseJson = await response.json();
       const data = responseJson.listStory;
-      const chunkedData = this.anonim == "true" ? this._chunkArrayAnonym(data, 9) : this._chunkArrayUser(data, 9);
+      const chunkedData =
+        this.anonim == 'true' ? this._chunkArrayAnonym(data, 9) : this._chunkArrayUser(data, 9);
       if (!chunkedData.length == 0) {
         this.chunk = sessionStorage.getItem(this.tab) ? sessionStorage.getItem(this.tab) : 0;
         this.totalChunk = chunkedData.length;
@@ -35,7 +36,7 @@ class TableApp extends LitWithoutShadowDom {
         this.data = chunkedData;
       }
     } catch (error) {
-      console.error("Error fetching data:", error);
+      console.error('Error fetching data:', error);
     }
   }
 
@@ -46,11 +47,11 @@ class TableApp extends LitWithoutShadowDom {
     }
 
     if (parseInt(this.chunk) + 1 == this.totalChunk) {
-      this.status = "next";
+      this.status = 'next';
     } else if (this.chunk == 0) {
-      this.status = "prev";
+      this.status = 'prev';
     } else {
-      this.status = "normal";
+      this.status = 'normal';
     }
   }
 
@@ -65,7 +66,7 @@ class TableApp extends LitWithoutShadowDom {
 
   _chunkArrayAnonym(arrays, chunkSize) {
     const result = [];
-    const filteredArrays = arrays.filter((array) => array.name == "anonim");
+    const filteredArrays = arrays.filter((array) => array.name == 'anonim');
 
     for (let i = 0; i < filteredArrays.length; i += chunkSize) {
       result.push(filteredArrays.slice(i, i + chunkSize));
@@ -103,7 +104,11 @@ class TableApp extends LitWithoutShadowDom {
                           <small class="text-body-secondary"> ${this._time(item.createdAt)}</small>
                         </div>
                         <div class="d-flex justify-content-center gap-2">
-                          <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal_${index}"
+                          <a
+                            href="#"
+                            class="btn btn-primary"
+                            data-bs-toggle="modal"
+                            data-bs-target="#modal_${index}"
                             ><i class="bi bi-eye"></i
                           ></a>
                           <a href="#" class="btn btn-primary"><i class="bi bi-pencil"></i></a>
@@ -118,7 +123,7 @@ class TableApp extends LitWithoutShadowDom {
                         </div>
                       </td>
                     </tr>
-                  `
+                  `,
                 )}
               `
             : html` tidak ada data `}
@@ -140,10 +145,10 @@ class TableApp extends LitWithoutShadowDom {
     let month = date.getMonth() + 1;
     let day = date.getDate();
 
-    let formattedMonth = month < 10 ? "0" + month : month;
-    let formattedDay = day < 10 ? "0" + day : day;
+    let formattedMonth = month < 10 ? '0' + month : month;
+    let formattedDay = day < 10 ? '0' + day : day;
 
-    const withSlashes = [formattedDay, formattedMonth, year].join("/");
+    const withSlashes = [formattedDay, formattedMonth, year].join('/');
     return withSlashes;
   }
 }

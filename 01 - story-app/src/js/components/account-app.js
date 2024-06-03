@@ -1,6 +1,6 @@
-import { html } from "lit";
-import LitWithoutShadowDom from "./base/LitWithoutShadowDom";
-import { msg, updateWhenLocaleChanges } from "@lit/localize";
+import { html } from 'lit';
+import LitWithoutShadowDom from './base/LitWithoutShadowDom';
+import { msg, updateWhenLocaleChanges } from '@lit/localize';
 
 class AccountApp extends LitWithoutShadowDom {
   constructor() {
@@ -20,4 +20,4 @@ class AccountApp extends LitWithoutShadowDom {
   }
 }
 
-customElements.define("account-app", AccountApp);
+customElements.define('account-app', AccountApp);

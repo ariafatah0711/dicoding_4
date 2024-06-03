@@ -1,4 +1,4 @@
-import { html, css, LitElement } from "lit";
+import { html, css, LitElement } from 'lit';
 
 const text = `class Data:
     def __init__(self, name, email):
@@ -27,31 +27,31 @@ class CardProfile extends LitElement {
   }
 
   _checkTheme() {
-    const KEY = "theme";
-    const theme = localStorage.getItem(KEY) ? localStorage.getItem(KEY) : "light";
+    const KEY = 'theme';
+    const theme = localStorage.getItem(KEY) ? localStorage.getItem(KEY) : 'light';
     return theme;
   }
 
   _applyTheme() {
     const root = this.shadowRoot.host;
-    if (this.theme === "dark") {
-      root.style.setProperty("--card-bg-color", "#212529");
-      root.style.setProperty("--card-border-color", "rgba(255, 255, 255, 0.25)");
-      root.style.setProperty("--card-shadow-color", "rgba(0, 0, 0, 0.5)");
-      root.style.setProperty("--card-footer-color", "#ccc");
-      root.style.setProperty("--card-text-color", "white");
-    } else if (this.theme === "blue") {
-      root.style.setProperty("--card-bg-color", "#0dcaf0");
-      root.style.setProperty("--card-border-color", "rgba(255, 255, 255, 0.25)");
-      root.style.setProperty("--card-shadow-color", "rgba(0, 0, 0, 0.5)");
-      root.style.setProperty("--card-footer-color", "#ccc");
-      root.style.setProperty("--card-text-color", "white");
+    if (this.theme === 'dark') {
+      root.style.setProperty('--card-bg-color', '#212529');
+      root.style.setProperty('--card-border-color', 'rgba(255, 255, 255, 0.25)');
+      root.style.setProperty('--card-shadow-color', 'rgba(0, 0, 0, 0.5)');
+      root.style.setProperty('--card-footer-color', '#ccc');
+      root.style.setProperty('--card-text-color', 'white');
+    } else if (this.theme === 'blue') {
+      root.style.setProperty('--card-bg-color', '#0dcaf0');
+      root.style.setProperty('--card-border-color', 'rgba(255, 255, 255, 0.25)');
+      root.style.setProperty('--card-shadow-color', 'rgba(0, 0, 0, 0.5)');
+      root.style.setProperty('--card-footer-color', '#ccc');
+      root.style.setProperty('--card-text-color', 'white');
     } else {
-      root.style.setProperty("--card-bg-color", "rgba(255, 255, 255, 0.45)");
-      root.style.setProperty("--card-border-color", "rgba(255, 255, 255, 0.25)");
-      root.style.setProperty("--card-shadow-color", "rgba(0, 0, 0, 0.1)");
-      root.style.setProperty("--card-footer-color", "#446");
-      root.style.setProperty("--card-text-color", "#224");
+      root.style.setProperty('--card-bg-color', 'rgba(255, 255, 255, 0.45)');
+      root.style.setProperty('--card-border-color', 'rgba(255, 255, 255, 0.25)');
+      root.style.setProperty('--card-shadow-color', 'rgba(0, 0, 0, 0.1)');
+      root.style.setProperty('--card-footer-color', '#446');
+      root.style.setProperty('--card-text-color', '#224');
     }
   }
 
@@ -125,7 +125,9 @@ class CardProfile extends LitElement {
   render() {
     return html`
       <div class="card">
-        <p @click=${() => this._goToLink("https://github.com/ariafatah0711")}><strong>ariafatah0711</strong>/README.md</p>
+        <p @click=${() => this._goToLink('https://github.com/ariafatah0711')}>
+          <strong>ariafatah0711</strong>/README.md
+        </p>
         <pre class="card-footer">${text}</pre>
       </div>
     `;
@@ -137,10 +139,10 @@ class CardProfile extends LitElement {
 
   // <button @click="${this._toggleTheme}">Toggle Theme</button>
   _toggleTheme() {
-    this.theme = this.theme === "light" ? "dark" : "light";
-    localStorage.setItem("theme", this.theme);
+    this.theme = this.theme === 'light' ? 'dark' : 'light';
+    localStorage.setItem('theme', this.theme);
     this._applyTheme();
   }
 }
 
-customElements.define("card-profile", CardProfile);
+customElements.define('card-profile', CardProfile);

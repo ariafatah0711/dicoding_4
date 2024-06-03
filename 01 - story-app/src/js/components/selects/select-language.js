@@ -1,10 +1,10 @@
-import { html } from "lit";
-import { allLocales } from "../../../generated/locale-codes";
-import { msg, updateWhenLocaleChanges } from "@lit/localize";
-import { getLocale, localeNames, saveLocaleToLocalStorage } from "../../localization";
-import LitWithoutShadowDom from "../base/LitWithoutShadowDom";
+import { html } from 'lit';
+import { allLocales } from '../../../generated/locale-codes';
+import { msg, updateWhenLocaleChanges } from '@lit/localize';
+import { getLocale, localeNames, saveLocaleToLocalStorage } from '../../localization';
+import LitWithoutShadowDom from '../base/LitWithoutShadowDom';
 
-const KEY = "locale";
+const KEY = 'locale';
 
 class SelectLanguage extends LitWithoutShadowDom {
   constructor() {
@@ -23,7 +23,11 @@ class SelectLanguage extends LitWithoutShadowDom {
       <div class="form-floating">
         <select class="form-select" id="floatingSelectGrid" @change=${this._localeChanged}>
           ${allLocales.map((locale) => {
-            return html` <option value=${locale} ?selected=${locale == getLocale()}>${localeNames[locale]}</option> `;
+            return html`
+              <option value=${locale} ?selected=${locale == getLocale()}>
+                ${localeNames[locale]}
+              </option>
+            `;
           })}
         </select>
         <label for="floatingSelectGrid">${msg(`ganti tema`)}</label>
@@ -43,4 +47,4 @@ class SelectLanguage extends LitWithoutShadowDom {
   }
 }
 
-customElements.define("select-language", SelectLanguage);
+customElements.define('select-language', SelectLanguage);

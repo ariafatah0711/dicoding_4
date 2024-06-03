@@ -1,10 +1,10 @@
-import TableApp from "./table-app";
+import TableApp from './table-app';
 
 class TableAnonimApp extends TableApp {
   constructor() {
     super();
-    this.tab = "anonim";
+    this.tab = 'anonim';
   }
 }
 
-customElements.define("table-anonim-app", TableAnonimApp);
+customElements.define('table-anonim-app', TableAnonimApp);
