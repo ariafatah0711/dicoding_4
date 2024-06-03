@@ -43,7 +43,7 @@ $width-mobile: 768px;
     }
 }
 
-span {
+span, .pointer {
     @include pointer()
 }
 

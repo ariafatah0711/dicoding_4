@@ -3,37 +3,45 @@
 // ==================================================
 
 //
-// Functions Bootstrap
+// Bootstrap Functions
 //
 @import '~bootstrap/scss/functions';
- 
+
 //
-// Variables Bootstrap
+// Bootstrap Variables
 //
 @import '~bootstrap/scss/variables';
- 
-// Menerapkan/override variables Bootstrap apa pun di sini
- 
+
+// Override any Bootstrap variables here
+$primary: #007bff;
+$secondary: #6c757d;
+$success: #28a745;
+$info: #17a2b8;
+$warning: #ffc107;
+$danger: #dc3545;
+$light: #f8f9fa;
+$dark: #343a40;
+
 //
-// Konfigurasi Bootstrap
+// Bootstrap Configuration
 //
 @import '~bootstrap/scss/maps';
 @import '~bootstrap/scss/mixins';
 @import '~bootstrap/scss/root';
 @import '~bootstrap/scss/utilities';
 @import '~bootstrap/scss/reboot';
- 
+
 //
-// Layouts dan components
+// Bootstrap Layouts and Components
 //
 @import '~bootstrap/scss/type';
 @import '~bootstrap/scss/images';
 @import '~bootstrap/scss/containers';
 @import '~bootstrap/scss/grid';
- 
+
 @import '~bootstrap/scss/helpers';
- 
-// Komponen-Komponen
+
+// Components
 @import '~bootstrap/scss/forms';
 @import '~bootstrap/scss/tables';
 @import '~bootstrap/scss/buttons';
@@ -48,39 +56,39 @@
 @import '~bootstrap/scss/spinners';
 @import '~bootstrap/scss/modal';
 @import '~bootstrap/scss/alert';
+
 //
-// Utilities API untuk menghasilkan utility classes
+// Utilities API for generating utility classes
 //
 @import '~bootstrap/scss/utilities/api';
 
 //
-// Tambahkan custom code di sini
+// Add custom code here
 //
 @mixin box-shadow {
-    // background: #ffffff;
     overflow: hidden;
     box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
     border-radius: 5px;
 }
 
-/* card */
+/* Card customization */
 .card {
     @include box-shadow();
-    
+
     .card-image {
-      display: flex;
-      min-height: 155px;
+        display: flex;
+        min-height: 155px;
         position: relative;
         display: flex;
         overflow: hidden;
-        transition: all none;
         transition: all 0.3s ease-in-out;
+
         img {
-          object-fit: cover;
-          object-position: center;
-          -o-object-fit: cover;
-          transition: all 0.3s ease-in-out;
+            object-fit: cover;
+            object-position: center;
+            transition: all 0.3s ease-in-out;
         }
+
         &:hover img {
             transform: scale(1.05);
         }
@@ -98,72 +106,116 @@
     transition: all 0.3s ease-in-out;
     &:hover {
         transform: translate(0, -4px);
-      }
-      :focus {
+    }
+    :focus {
         background: white !important;
-      }
+    }
 }
 
-/* pagination */
+/* Pagination customization */
 .pagination {
-  @include box-shadow();
-
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  row-gap: 0.6rem;
-  // overflow-x: auto;
-  // scroll-snap-type: x mandatory;
-  // -webkit-overflow-scrolling: touch;
-
-  .page-item {
-    scroll-snap-align: center;
-  }
-  
-  .pagination .page-link {
-    flex-shrink: 0;
-  }
-}
-
-@media (max-width: 576px) {
-  .pagination {
-    box-shadow: none;
-    border-radius: none;
+    @include box-shadow();
 
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-  }
-  
-  .page-item.active {
-    scroll-snap-align: center;
-  }
+    row-gap: 0.6rem;
+
+    .page-item {
+        scroll-snap-align: center;
+    }
+
+    .page-link {
+        flex-shrink: 0;
+    }
 }
 
-/* table */
+@media (max-width: 576px) {
+    .pagination {
+        box-shadow: none;
+        border-radius: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .page-item.active {
+        scroll-snap-align: center;
+    }
+}
+
+/* Table customization */
 .table {
-  @include box-shadow();
+    @include box-shadow();
 }
 
-/* nav */
-.nav-tabs button.active {
-    @include box-shadow();
-    border-radius: 1px;
-    box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.1);
-}
+/* Navigation customization */
 .nav-tabs {
     @include box-shadow();
     box-shadow: 0 4px 2px -8px rgba(0, 0, 0, 0.1);
+
+    button.active {
+        @include box-shadow();
+        border-radius: 1px;
+        box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.1);
+    }
 }
 
-/* theme */
-[data-bs-theme="blue"] {
-  .card {
-    box-shadow: none;
-    border-radius: none;
-  }
+/* Modal customization */
+.modal-content {
+    @include box-shadow();
+    border-radius: 0.5rem;
+    transition: all 0.3s ease-in-out;
+
+    .modal-header, .modal-footer {
+        @include box-shadow();
+        border-bottom: none;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+    }
+
+    .modal-body {
+        padding: 1.5rem;
+    }
+
+    .modal-footer {
+        border-top: none;
+        padding: 1rem 1.5rem;
+        @include box-shadow();
+        border-bottom-left-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+    }
 }
 
+.modal-dialog {
+    // max-width: 80%;
+    margin: 1.75rem auto;
+    transition: all 0.3s ease-in-out;
+}
+
+.modal-backdrop {
+    background: rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 576px) {
+    .modal-dialog {
+        max-width: 95%;
+    }
+
+    .modal-content {
+        box-shadow: none;
+        border-radius: 0.25rem;
+
+        .modal-header,
+        .modal-footer {
+            box-shadow: none;
+            border-radius: 0;
+        }
+    }
+}
+
+/* Theme customization */
 [data-bs-theme="blue"] {
     --bs-body-color-rgb: #{to-rgb($white)};
     --bs-body-bg: var(--bs-cyan);
@@ -181,37 +233,37 @@
     --bs-warning-rgb: #{to-rgb($blue-400)};
     --bs-danger: #dc3545;
     --bs-danger-rgb: #{to-rgb($blue-400)};
-  
+
     .dropdown-menu {
-      --bs-dropdown-bg: #{mix($blue-500, $blue-600)};
-      --bs-dropdown-link-active-bg: #{$blue-700};
-      --bs-dropdown-link-hover-bg: #{darken($blue-600, 10%)};
-      --bs-dropdown-border-radius: 0.25rem;
-      --bs-dropdown-box-shadow: 0 0.5rem 1rem rgba(0, 123, 255, 0.15);
+        --bs-dropdown-bg: #{mix($blue-500, $blue-600)};
+        --bs-dropdown-link-active-bg: #{$blue-700};
+        --bs-dropdown-link-hover-bg: #{darken($blue-600, 10%)};
+        --bs-dropdown-border-radius: 0.25rem;
+        --bs-dropdown-box-shadow: 0 0.5rem 1rem rgba(0, 123, 255, 0.15);
     }
-  
+
     .btn-secondary {
-      --bs-btn-bg: #{mix($gray-600, $blue-400, .5)};
-      --bs-btn-border-color: #{rgba($white, .25)};
-      --bs-btn-hover-bg: #{darken(mix($gray-600, $blue-400, .5), 5%)};
-      --bs-btn-hover-border-color: #{rgba($white, .25)};
-      --bs-btn-active-bg: #{darken(mix($gray-600, $blue-400, .5), 10%)};
-      --bs-btn-active-border-color: #{rgba($white, .5)};
-      --bs-btn-focus-border-color: #{rgba($white, .5)};
-      --bs-btn-focus-box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .2);
-      --bs-btn-border-radius: 0.25rem;
-      --bs-btn-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        --bs-btn-bg: #{mix($gray-600, $blue-400, .5)};
+        --bs-btn-border-color: #{rgba($white, .25)};
+        --bs-btn-hover-bg: #{darken(mix($gray-600, $blue-400, .5), 5%)};
+        --bs-btn-hover-border-color: #{rgba($white, .25)};
+        --bs-btn-active-bg: #{darken(mix($gray-600, $blue-400, .5), 10%)};
+        --bs-btn-active-border-color: #{rgba($white, .5)};
+        --bs-btn-focus-border-color: #{rgba($white, .5)};
+        --bs-btn-focus-box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .2);
+        --bs-btn-border-radius: 0.25rem;
+        --bs-btn-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     }
 
     .card {
-      --bs-card-border-color: #{rgba($white, .25)};
+        --bs-card-border-color: #{rgba($white, .25)};
     }
 
     .form-control {
-      --bs-form-control-bg: #{darken($blue-500, 10%)};
-      --bs-form-control-border-color: #{rgba($white, .25)};
-      --bs-form-control-focus-bg: #{darken($blue-500, 5%)};
-      --bs-form-control-focus-border-color: #{rgba($white, .5)};
-      --bs-form-control-focus-box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .2);
+        --bs-form-control-bg: #{darken($blue-500, 10%)};
+        --bs-form-control-border-color: #{rgba($white, .25)};
+        --bs-form-control-focus-bg: #{darken($blue-500, 5%)};
+        --bs-form-control-focus-border-color: #{rgba($white, .5)};
+        --bs-form-control-focus-box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .2);
     }
 }

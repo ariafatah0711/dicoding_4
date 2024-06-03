@@ -11,6 +11,9 @@ import "./card/post-item";
 import "./card/post-pagination";
 import "./card/card-profile";
 
+// modal
+import "./modal/modal-item";
+
 // form
 import "./form/add-story";
 

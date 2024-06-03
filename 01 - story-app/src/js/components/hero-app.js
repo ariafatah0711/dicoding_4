@@ -2,7 +2,7 @@ import { html, css, LitElement } from "lit";
 import LitWithoutShadowDom from "./base/LitWithoutShadowDom";
 import { msg, updateWhenLocaleChanges } from "@lit/localize";
 
-class HeroAppShadow extends LitWithoutShadowDom {
+class HeroAppShadow extends LitElement {
   static properties = {
     img: { type: String, reflect: true },
     type: { type: String, reflect: true },
@@ -33,32 +33,35 @@ class HeroAppShadow extends LitWithoutShadowDom {
   }
 
   render() {
-    const imgBoostrap = "rounded mx-auto d-block py-3";
-    const textBoostrap = "text-center pb-2";
+    // const imgClass = "rounded mx-auto d-block py-3";
+    // const textClass = "text-center pb-2";
+
+    const imgClass = "hero-img";
+    const textClass = "hero-title";
 
     let content;
     switch (this.type) {
       case "home":
-        content = html`<h1 class="${textBoostrap}">${msg(`aku ingin denger cerita kamu hari ini`)}</h1>`;
+        content = html`<h1 class="${textClass}">${msg(`aku ingin denger cerita kamu hari ini`)}</h1>`;
         break;
       case "add":
-        content = html`<h1 class="${textBoostrap}">${msg(`tambahkan ceritamu`)}</h1>`;
+        content = html`<h1 class="${textClass}">${msg(`tambahkan ceritamu`)}</h1>`;
         break;
       case "dashboard":
-        content = html`<h1 class="${textBoostrap}">${msg(`dasbor`)}</h1>`;
+        content = html`<h1 class="${textClass}">${msg(`dasbor`)}</h1>`;
         break;
       case "setting":
-        content = html`<h1 class="${textBoostrap}">${msg(`pengaturan`)}</h1>`;
+        content = html`<h1 class="${textClass}">${msg(`pengaturan`)}</h1>`;
         break;
       case "account":
-        content = html`<h1 class="${textBoostrap}">${msg(`akun`)}</h1>`;
+        content = html`<h1 class="${textClass}">${msg(`akun`)}</h1>`;
         break;
       default:
         content = html``;
     }
 
     return html`
-      <img src="${this.img}" class="${imgBoostrap}" style="max-width: 10rem;" alt="..." />
+      <img src="${this.img}" class="${imgClass}" style="max-width: 10rem;" alt="..." />
       ${content}
     `;
   }

@@ -25,10 +25,15 @@ class TableApp extends LitWithoutShadowDom {
       const responseJson = await response.json();
       const data = responseJson.listStory;
       const chunkedData = this.anonim == "true" ? this._chunkArrayAnonym(data, 9) : this._chunkArrayUser(data, 9);
-      this.chunk = sessionStorage.getItem(this.tab) ? sessionStorage.getItem(this.tab) : 0;
-      this.totalChunk = chunkedData.length;
-      this.data = chunkedData[this.chunk];
-      this._checkStatus();
+      if (!chunkedData.length == 0) {
+        this.chunk = sessionStorage.getItem(this.tab) ? sessionStorage.getItem(this.tab) : 0;
+        this.totalChunk = chunkedData.length;
+        this.data = chunkedData[this.chunk];
+        console.log(this.data);
+        this._checkStatus();
+      } else {
+        this.data = chunkedData;
+      }
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -55,7 +60,6 @@ class TableApp extends LitWithoutShadowDom {
       result.push(array.slice(i, i + chunkSize));
     }
 
-    this.data = result[this.chunk];
     return result;
   }
 
@@ -68,6 +72,8 @@ class TableApp extends LitWithoutShadowDom {
     }
 
     this.chunk = 0;
+    console.log(result);
+
     return result;
   }
 
@@ -82,27 +88,40 @@ class TableApp extends LitWithoutShadowDom {
           </tr>
         </thead>
         <tbody>
-          ${this.data.map(
-            (item, index) => html`
-              <tr id="${item.description}]">
-                <th scope="row">${index + 1}</th>
-                <td class="w-75 w-md-25">
-                  <p class="p-md-wrap">${item.description}</p>
-                </td>
-                <td class="d-flex justify-content-between gap-4 flex-column flex-lg-row">
-                  <div class="d-flex gap-2 ">
-                    <i class="bi bi-calendar-check"></i>
-                    <small class="text-body-secondary"> ${this._time(item.createdAt)}</small>
-                  </div>
-                  <div class="d-flex justify-content-center gap-2">
-                    <a href="#" class="btn btn-primary"><i class="bi bi-eye"></i></a>
-                    <a href="#" class="btn btn-primary"><i class="bi bi-pencil"></i></a>
-                    <a href="#" class="btn btn-primary"><i class="bi bi-trash"></i></a>
-                  </div>
-                </td>
-              </tr>
-            `
-          )}
+          ${!this.data.length == 0
+            ? html`
+                ${this.data.map(
+                  (item, index) => html`
+                    <tr id="${item.description}]">
+                      <th scope="row">${index + 1}</th>
+                      <td class="w-75 w-md-25">
+                        <p class="p-md-wrap">${item.description}</p>
+                      </td>
+                      <td class="d-flex justify-content-between gap-4 flex-column flex-lg-row">
+                        <div class="d-flex gap-2 ">
+                          <i class="bi bi-calendar-check"></i>
+                          <small class="text-body-secondary"> ${this._time(item.createdAt)}</small>
+                        </div>
+                        <div class="d-flex justify-content-center gap-2">
+                          <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal_${index}"
+                            ><i class="bi bi-eye"></i
+                          ></a>
+                          <a href="#" class="btn btn-primary"><i class="bi bi-pencil"></i></a>
+                          <a href="#" class="btn btn-primary"><i class="bi bi-trash"></i></a>
+                          <modal-item
+                            target="modal_${index}"
+                            name="${item.name}"
+                            date="${this._time(item.createdAt)}"
+                            img="${item.photoUrl}"
+                            description="${item.description}"
+                          ></modal-item>
+                        </div>
+                      </td>
+                    </tr>
+                  `
+                )}
+              `
+            : html` tidak ada data `}
         </tbody>
       </table>
       <table-pagination

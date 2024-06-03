@@ -10,7 +10,7 @@ class SettingApp extends LitWithoutShadowDom {
 
   render() {
     return html`
-      <div class="row g-2 text-capitalize">
+      <div class="row g-2 text-capitalize gap-3">
         <select-theme class="col-md"></select-theme>
         <select-language class="col-md"></select-language>
         <card-profile class="d-flex justify-content-center"></card-profile>

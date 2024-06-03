@@ -8,7 +8,8 @@ class PostItem extends LitWithoutShadowDom {
     description: { type: String, reflect: true },
     date: { type: String, reflect: true },
     datePostAgo: { type: String, reflect: true },
-    loading: { typ: Boolean, reflect: true },
+    loading: { type: Boolean, reflect: true },
+    id: { type: Number, reflect: true },
   };
 
   static styles = css`
@@ -52,7 +53,7 @@ class PostItem extends LitWithoutShadowDom {
     `;
 
     return html`
-      <div class="card h-100">
+      <div class="card h-100 pointer" data-bs-toggle="modal" data-bs-target="#modal_${this.id}">
         ${withoutLoading}
         <div class="card-body">
           <h5 class="card-title">${this.name}</h5>
@@ -66,6 +67,13 @@ class PostItem extends LitWithoutShadowDom {
           </div>
         </div>
       </div>
+      <modal-item
+        target="modal_${this.id}"
+        name="${this.name}"
+        date="${this.date}"
+        img="${this.img}"
+        description="${this.description}"
+      ></modal-item>
     `;
   }
 }

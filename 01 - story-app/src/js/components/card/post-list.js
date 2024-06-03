@@ -5,7 +5,7 @@ import { differenceInYears, differenceInMonths, differenceInWeeks, differenceInD
 
 class PostList extends LitWithoutShadowDom {
   static properties = {
-    data: { type: String, reflect: true },
+    data: { type: Array, reflect: true },
     currentTime: { type: Number },
     chunk: { type: Number, reflect: true },
     totalChunk: { type: Number, reflect: true },
@@ -105,6 +105,7 @@ class PostList extends LitWithoutShadowDom {
             ,
             datePostAgo="${msg(`last updated`)} ${this._timePostAgo(new Date(item.createdAt).getTime())}"
             date="${this._time(item.createdAt)}"
+            id="${item.id}"
           ></post-item> `
       )}
       </div>
