@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+<file target-language="en" source-language="id" original="lit-localize-inputs" datatype="plaintext">
+<body>
+<trans-unit id="sb56798071baac29e">
+  <source>dasbor</source>
+  <target>dashboard</target>
+</trans-unit>
+<trans-unit id="s63dc8e0c3a4e101c">
+  <source>pengaturan</source>
+  <target>settings</target>
+</trans-unit>
+<trans-unit id="sc22a9483cdfc43da">
+  <source>akun</source>
+  <target>account</target>
+</trans-unit>
+<trans-unit id="s90a714a4349ca0f1">
+  <source>keluar</source>
+  <target>logout</target>
+</trans-unit>
+<trans-unit id="s861bcba4db199cb4">
+  <source>masuk</source>
+  <target>login</target>
+</trans-unit>
+<trans-unit id="s854242b8a879835a">
+  <source>tambah cerita</source>
+  <target>add story</target>
+</trans-unit>
+<trans-unit id="s55a10969ca715e1a">
+  <source>beranda</source>
+  <target>home</target>
+</trans-unit>
+<trans-unit id="sb7c4c1e6784787df">
+  <source>profil</source>
+  <target>profile</target>
+</trans-unit>
+<trans-unit id="s51d0f228b37fd03e">
+  <source>aku ingin denger cerita kamu hari ini</source>
+  <target>I want to hear your story today</target>
+</trans-unit>
+<trans-unit id="s04a2bb60eb38f246">
+  <source>tambahkan ceritamu</source>
+  <target>add your story</target>
+</trans-unit>
+<trans-unit id="s87f398d5a8c139c0">
+  <source>terang</source>
+  <target>light</target>
+</trans-unit>
+<trans-unit id="s3d5ec69a6bb3472e">
+  <source>gelap</source>
+  <target>dark</target>
+</trans-unit>
+<trans-unit id="sdeec2d9bd0d9a355">
+  <source>biru</source>
+  <target>blue</target>
+</trans-unit>
+<trans-unit id="sdb40d268bbd1a81c">
+  <source>ganti bahasa</source>
+  <target>change language</target>
+</trans-unit>
+<trans-unit id="s2b940301421633c3">
+  <source>masukan deskripsi disini</source>
+  <target>enter description here</target>
+</trans-unit>
+<trans-unit id="s24eb6ed15e6253d7">
+  <source>deskripsi</source>
+  <target>description</target>
+</trans-unit>
+<trans-unit id="se889b38b74f47e2d">
+  <source>masukan text minimal 10-125 huruf</source>
+  <target>enter text minimum 10-125 characters</target>
+</trans-unit>
+<trans-unit id="sd535cd6798034923">
+  <source>kirim sebagai</source>
+  <target>send as</target>
+</trans-unit>
+<trans-unit id="sd93e3def078c6f4c">
+  <source>tamu</source>
+  <target>guest</target>
+</trans-unit>
+<trans-unit id="s25a08d8d86e134df">
+  <source>kirim</source>
+  <target>send</target>
+</trans-unit>
+<trans-unit id="s94a644b5e0880579">
+  <source>username</source>
+  <target>username</target>
+</trans-unit>
+<trans-unit id="s9a6832609fd9c1bf">
+  <source>alamat email</source>
+  <target>email address</target>
+</trans-unit>
+<trans-unit id="s4b1a493507b3a318">
+  <source>password</source>
+  <target>password</target>
+</trans-unit>
+<trans-unit id="sb265cc26dbb527f9">
+  <source>ganti nama</source>
+  <target>change name</target>
+</trans-unit>
+<trans-unit id="sd064987a26e82eb7">
+  <source>ganti tema</source>
+  <target>change theme</target>
+</trans-unit>
+<trans-unit id="s7e529dba6c35eb7a">
+  <source>last updated</source>
+  <target>last updated</target>
+</trans-unit>
+<trans-unit id="s62f49131afb567ec">
+  <source>data tidak ditemukan</source>
+  <target>data not found</target>
+</trans-unit>
+<trans-unit id="sf31e8cf85d601d2a">
+  <source>sebelumnya</source>
+  <target>previous</target>
+</trans-unit>
+<trans-unit id="s52c7e91ac3b4c3b1">
+  <source>berikutnya</source>
+  <target>next</target>
+</trans-unit>
+<trans-unit id="s4e88ffdb99e2ac13">
+  <source>tanggal</source>
+  <target>date</target>
+</trans-unit>
+<trans-unit id="s0f136ff2c086b760">
+  <source>reset</source>
+  <target>reset</target>
+</trans-unit>
+<trans-unit id="s791e05c31c49ee28">
+  <source>ganti kata sandi</source>
+  <target>change password</target>
+</trans-unit>
+<trans-unit id="se96192ff1de6ff4d">
+  <source>hapus akun</source>
+  <target>remove account</target>
+</trans-unit>
+<trans-unit id="sa52127387350c01a">
+  <source>setel ulang pengaturan</source>
+  <target>reset settings</target>
+</trans-unit>
+</body>
+</file>
+</xliff>
