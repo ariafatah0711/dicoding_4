@@ -19,7 +19,7 @@ class postPagination extends LitWithoutShadowDom {
   handleClick(event, index) {
     event.preventDefault();
     let targetElement;
-    if (this.tab === 'home') {
+    if (this.tab == 'home') {
       targetElement = this.closest('post-list');
     }
 

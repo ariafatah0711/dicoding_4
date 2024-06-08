@@ -14,7 +14,7 @@ class SelectLanguage extends LitWithoutShadowDom {
   }
 
   _getLocaleStorage() {
-    let locale = localStorage.getItem(KEY) || getLocale();
+    const locale = localStorage.getItem(KEY) || getLocale();
     this._changeLocale(locale);
   }
 

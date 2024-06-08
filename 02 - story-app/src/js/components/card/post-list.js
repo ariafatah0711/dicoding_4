@@ -59,12 +59,12 @@ class PostList extends LitWithoutShadowDom {
   _time(time) {
     const date = new Date(time);
 
-    let year = date.getFullYear();
-    let month = date.getMonth() + 1;
-    let day = date.getDate();
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
 
-    let formattedMonth = month < 10 ? '0' + month : month;
-    let formattedDay = day < 10 ? '0' + day : day;
+    const formattedMonth = month < 10 ? '0' + month : month;
+    const formattedDay = day < 10 ? '0' + day : day;
 
     const withSlashes = [formattedDay, formattedMonth, year].join('/');
     return withSlashes;

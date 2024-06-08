@@ -10,9 +10,6 @@ class ModalItem extends LitWithoutShadowDom {
     target: { type: String, reflect: true },
   };
 
-  constructor() {
-    super();
-  }
   render() {
     return html`
       <div

@@ -15,7 +15,7 @@ class BtnSetting extends LitWithoutShadowDom {
       </button>
 
       <div
-        class="offcanvas offcanvas-start w-50"
+        class="offcanvas offcanvas-start w-75"
         tabindex="-1"
         id="offcanvasExample"
         aria-labelledby="offcanvasExampleLabel"

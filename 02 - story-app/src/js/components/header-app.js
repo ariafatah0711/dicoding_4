@@ -15,7 +15,7 @@ class HeaderApp extends LitWithoutShadowDom {
     updateWhenLocaleChanges(this);
   }
 
-  _userLogOut() {
+  _userLogOut(event) {
     event.preventDefault();
 
     try {

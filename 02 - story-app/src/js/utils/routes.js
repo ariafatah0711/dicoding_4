@@ -1,6 +1,7 @@
 import Home from '../pages/home';
 import Dashboard from '../pages/user/dashboard';
 import Add from '../pages/user/add-story';
+import Edit from '../pages/user/edit-story';
 import Account from '../pages/user/account';
 import Setting from '../pages/user/setting';
 
@@ -13,6 +14,7 @@ const routes = {
   '/': Home,
   '/user/dashboard.html': Dashboard,
   '/user/add-story.html': Add,
+  '/user/edit-story.html': Edit,
   '/user/account.html': Account,
   '/user/setting.html': Setting,
   '/auth/login.html': Login,

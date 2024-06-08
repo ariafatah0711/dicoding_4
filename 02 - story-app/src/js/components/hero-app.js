@@ -1,5 +1,4 @@
 import { html, css, LitElement } from 'lit';
-import LitWithoutShadowDom from './base/LitWithoutShadowDom';
 import { msg, updateWhenLocaleChanges } from '@lit/localize';
 
 class HeroAppShadow extends LitElement {

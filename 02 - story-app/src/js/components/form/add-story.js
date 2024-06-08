@@ -8,11 +8,16 @@ class AddStory extends LitWithoutShadowDom {
   static properties = {
     name: { type: String, reflect: true },
     guest: { type: Boolean },
+    location: { type: Boolean },
+    lat: { type: String, reflect: true },
+    lon: { type: String, reflect: true },
   };
 
   constructor() {
     super();
     updateWhenLocaleChanges(this);
+
+    this.isSubmitting = false;
 
     this.name = Utils.getUserName();
     this.guest = false;
@@ -21,18 +26,19 @@ class AddStory extends LitWithoutShadowDom {
   render() {
     return html`
       <form class="was-validated padded-20">
+        <div id="div-alert"></div>
         <div class="form-floating">
           <textarea
             class="form-control"
             placeholder="${msg(`masukan deskripsi disini`)}"
             id="descriptionInput"
             style="height: 100px"
-            minlength="10"
+            minlength="5"
             maxlength="125"
             required
           ></textarea>
           <label for="floatingTextarea2">${msg(`deskripsi`)}</label>
-          <div class="invalid-feedback">${msg(`masukan text minimal 10-125 huruf`)}</div>
+          <div class="invalid-feedback">${msg(`masukan text minimal 5-125 huruf`)}</div>
         </div>
         <div class="input-group">
           <input
@@ -43,18 +49,33 @@ class AddStory extends LitWithoutShadowDom {
             aria-describedby="inputGroupFileAddon04"
             aria-label="Upload"
             required
+            @change=${this._previewImage}
           />
+        </div>
+        <img id="previewImage" src="" />
+        <div class="form-check form-switch">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            role="switch"
+            id="inputGuest"
+            @change=${this._toggleGuestMode}
+          />
+          <label class="form-check-label" for="inputGuest"
+            >${msg(`kirim sebagai`)} ${this.name}/${msg(`tamu`)}?</label
+          >
         </div>
         <div class="form-check form-switch">
           <input
             class="form-check-input"
             type="checkbox"
             role="switch"
-            id="flexSwitchCheckDefault"
-            @change=${this._toggleGuestMode}
+            id="inputLocation"
+            @change=${this._toggleLocationMode}
           />
-          <label class="form-check-label" for="flexSwitchCheckDefault"
-            >${msg(`kirim sebagai`)} ${this.name}/${msg(`tamu`)}?</label
+          <label class="form-check-label" for="inputLocation"
+            >location? <small id="lat">${this.lat}</small>
+            <small id="lon">${this.lon}</small></label
           >
         </div>
         <div class="d-grid gap-2 col-6 mx-auto">
@@ -66,40 +87,100 @@ class AddStory extends LitWithoutShadowDom {
     `;
   }
 
+  _previewImage(event) {
+    const imageInput = event.target;
+    const previewImage = document.getElementById('previewImage');
+    const file = imageInput.files[0];
+    const reader = new FileReader();
+
+    reader.onloadend = function () {
+      previewImage.src = reader.result;
+    };
+
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      previewImage.src = '';
+    }
+  }
+
   _toggleGuestMode(event) {
     this.guest = event.target.checked;
   }
 
+  async _toggleLocationMode(event) {
+    console.log(this.lat);
+
+    if (event.target.checked) {
+      if (navigator.geolocation) {
+        try {
+          const position = await new Promise((resolve, reject) => {
+            navigator.geolocation.getCurrentPosition(resolve, reject);
+          });
+          this.lat = position.coords.latitude;
+          this.lon = position.coords.longitude;
+          this.location = true;
+        } catch (error) {
+          console.error('Error getting user location:', error);
+          event.target.checked = false;
+          this.location = false;
+        }
+      } else {
+        console.log('Geolocation is not supported by this browser.');
+        this.location = false;
+      }
+    } else {
+      this.lat = null;
+      this.lon = null;
+      this.location = false;
+      if (navigator.geolocation) {
+        navigator.geolocation.clearWatch();
+      }
+    }
+  }
+
   async _sendPost() {
     const formData = this._getFormData();
-    let lat, lon;
+    let lat = this.lat ? this.lat : null;
+    let lon = this.lon ? this.lon : null;
+
+    console.log(lat);
+    console.log(lon);
+
+    if (formData.description.length < 5 || formData.description.length > 125) {
+      return;
+    }
+
+    if (this.isSubmitting) return;
 
     if (this._validateFormData({ ...formData })) {
-      console.log('formData');
-      console.log(formData);
       try {
         if (!this.guest) {
-          const response = await Crud.createStory({
+          await Crud.createStory({
             description: formData.description,
             photo: formData.image,
-            lat,
-            lon,
+            lat: lat,
+            lon: lon,
           });
-          console.log(response);
         } else {
-          const response = await Crud.createGuestStory({
+          await Crud.createGuestStory({
             description: formData.description,
             photo: formData.image,
-            lat,
-            lon,
+            lat: lat,
+            lon: lon,
           });
-          console.log(response);
         }
-        window.alert('New transaction added successfully');
+        this._goToDashboardPage();
       } catch (error) {
+        this._showAllert('add', error.response.data.message);
         console.error(error);
       }
     }
+  }
+
+  _showAllert(type, message) {
+    const alertPlaceholder = document.getElementById('div-alert');
+    alertPlaceholder.innerHTML = `<alert-wrapper type="${type}" message="${message}"></alert-wrapper>`;
   }
 
   _getFormData() {
@@ -115,9 +196,13 @@ class AddStory extends LitWithoutShadowDom {
   }
 
   _validateFormData(formData) {
-    const formDataFiltered = Object.values(formData).filter((item) => item === '');
+    const formDataFiltered = Object.values(formData).filter((item) => item == '');
 
-    return formDataFiltered.length === 0;
+    return formDataFiltered.length == 0;
+  }
+
+  _goToDashboardPage() {
+    window.location.href = '/';
   }
 }
 

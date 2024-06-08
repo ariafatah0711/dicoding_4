@@ -6,16 +6,12 @@ class DashboardApp extends LitWithoutShadowDom {
     tab: { type: String, reflect: true },
   };
 
-  constructor() {
-    super();
-  }
-
   _changeTab(tab) {
     sessionStorage.setItem('tab', tab);
   }
 
   render() {
-    const tabUser = sessionStorage.getItem('tab') === 'user' ? true : false;
+    const tabUser = sessionStorage.getItem('tab') == 'user';
 
     return html`
       <ul class="nav nav-tabs" id="myTab" role="tablist">

@@ -28,9 +28,6 @@ const Login = {
     const formData = this._getFormData();
 
     if (this._validateFormData({ ...formData })) {
-      console.log('formData');
-      console.log(formData);
-
       try {
         this._showSpinner();
         const response = await Auth.login({

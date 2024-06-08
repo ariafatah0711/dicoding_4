@@ -44,11 +44,11 @@ class LabelAccount extends LitWithoutShadowDom {
 
     if (this.type == 'user') {
       return user;
-    } else if (this.type == 'email') {
-      return email;
-    } else {
-      return password;
     }
+    if (this.type == 'email') {
+      return email;
+    }
+    return password;
   }
 }
 

@@ -55,9 +55,8 @@ class InputAccount extends LitWithoutShadowDom {
 
     if (this.type == 'user') {
       return user;
-    } else {
-      return password;
     }
+    return password;
   }
 }
 

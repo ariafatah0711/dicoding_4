@@ -60,7 +60,7 @@ class TableApp extends LitWithoutShadowDom {
 
   _chunkArrayUser(arrays, chunkSize) {
     const result = [];
-    const filteredArrays = arrays.filter((array) => story.name === Utils.getUserName());
+    const filteredArrays = arrays.filter((array) => array.name === Utils.getUserName());
 
     for (let i = 0; i < filteredArrays.length; i += chunkSize) {
       result.push(filteredArrays.slice(i, i + chunkSize));
@@ -123,7 +123,12 @@ class TableApp extends LitWithoutShadowDom {
                             data-bs-target="#modal_${this.tab}_${index}"
                             ><i class="bi bi-eye"></i
                           ></a>
-                          <a href="#" class="btn btn-primary"><i class="bi bi-pencil"></i></a>
+                          <a
+                            href="#"
+                            class="btn btn-primary"
+                            @click="${() => this._editStory(item.id)}"
+                            ><i class="bi bi-pencil"></i
+                          ></a>
                           <a href="#" class="btn btn-primary"><i class="bi bi-trash"></i></a>
                           <modal-item
                             target="modal_${this.tab}_${index}"
@@ -139,10 +144,13 @@ class TableApp extends LitWithoutShadowDom {
                 )}
               `
             : html`
-                <th scope="row">1.</th>
-                <td class="w-75 w-md-25">
-                  <p class="p-md-wrap">data tidak ada</p>
-                </td>
+                <tr>
+                  <th scope="row">0.</th>
+                  <td class="w-75 w-md-25">
+                    <p class="p-md-wrap">${msg(`data tidak ditemukan`)}</p>
+                  </td>
+                  <td class="w-75 w-md-25"></td>
+                </tr>
               `}
         </tbody>
       </table>
@@ -155,15 +163,20 @@ class TableApp extends LitWithoutShadowDom {
     `;
   }
 
+  _editStory(storyId) {
+    const editStoryUrl = `/user/edit-story.html?id=${storyId}`;
+    window.location.href = editStoryUrl;
+  }
+
   _time(time) {
     const date = new Date(time);
 
-    let year = date.getFullYear();
-    let month = date.getMonth() + 1;
-    let day = date.getDate();
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
 
-    let formattedMonth = month < 10 ? '0' + month : month;
-    let formattedDay = day < 10 ? '0' + day : day;
+    const formattedMonth = month < 10 ? '0' + month : month;
+    const formattedDay = day < 10 ? '0' + day : day;
 
     const withSlashes = [formattedDay, formattedMonth, year].join('/');
     return withSlashes;

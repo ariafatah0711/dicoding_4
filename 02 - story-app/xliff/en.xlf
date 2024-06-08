@@ -66,10 +66,6 @@
   <source>deskripsi</source>
   <target>description</target>
 </trans-unit>
-<trans-unit id="se889b38b74f47e2d">
-  <source>masukan text minimal 10-125 huruf</source>
-  <target>enter text minimum 10-125 characters</target>
-</trans-unit>
 <trans-unit id="sd535cd6798034923">
   <source>kirim sebagai</source>
   <target>send as</target>
@@ -106,10 +102,6 @@
   <source>last updated</source>
   <target>last updated</target>
 </trans-unit>
-<trans-unit id="s62f49131afb567ec">
-  <source>data tidak ditemukan</source>
-  <target>data not found</target>
-</trans-unit>
 <trans-unit id="sf31e8cf85d601d2a">
   <source>sebelumnya</source>
   <target>previous</target>
@@ -137,6 +129,74 @@
 <trans-unit id="sa52127387350c01a">
   <source>setel ulang pengaturan</source>
   <target>reset settings</target>
+</trans-unit>
+<trans-unit id="s45dab30b4d2d3c14">
+  <source>Masuk</source>
+  <target>Login</target>
+</trans-unit>
+<trans-unit id="s123467b419acbc07">
+  <source>email</source>
+  <target>email</target>
+</trans-unit>
+<trans-unit id="sa7a70bfb41a338db">
+  <source>kata sandi</source>
+  <target>password</target>
+</trans-unit>
+<trans-unit id="s7ae24e2336894d23">
+  <source>Belum punya akun?</source>
+  <target>Don't have an account?</target>
+</trans-unit>
+<trans-unit id="seb832a602c5b48df">
+  <source>daftar</source>
+  <target>Sign up</target>
+</trans-unit>
+<trans-unit id="s3cf0c263cd2dcba3">
+  <source>Sudah punya akun?</source>
+  <target>Already have an account?</target>
+</trans-unit>
+<trans-unit id="s5a0a1db9e8aa5cda">
+  <source>Akun tidak ditemukan!</source>
+  <target>Account not found!</target>
+</trans-unit>
+<trans-unit id="sb616cbe958dea2ee">
+  <source>Berhasil Login</source>
+  <target>Login Successful</target>
+</trans-unit>
+<trans-unit id="sf41b5558524d0412">
+  <source>Akan dialihkan ke home</source>
+  <target>Redirecting to home</target>
+</trans-unit>
+<trans-unit id="sb1a4bc14542488cb">
+  <source>Gagal mendaftarkan akun!</source>
+  <target>Failed to register account!</target>
+</trans-unit>
+<trans-unit id="s116a8d48166d06f0">
+  <source>Berhasil mendaftarkan akun</source>
+  <target>Account registration successful</target>
+</trans-unit>
+<trans-unit id="s742c9c23d1339e9a">
+  <source>Akan dialihkan ke halaman login</source>
+  <target>Redirecting to login page</target>
+</trans-unit>
+<trans-unit id="sd93ff51dd0da1dbf">
+  <source>Daftar</source>
+  <target>Sign up</target>
+</trans-unit>
+<trans-unit id="sc4bcb1ba8e632252">
+  <source>nama</source>
+  <target>name</target>
+</trans-unit>
+<trans-unit id="s37ee620e44d1533d">
+  <source>masukan text minimal 5-125 huruf</source>
+  <target>input text minimum 5-125 letters</target>
+</trans-unit>
+<trans-unit id="s1978bd4ba70d2159">
+  <source>Gagal Menambahkah Story</source>
+  <target>Failed to Add Story</target>
+</trans-unit>
+<trans-unit id="s839a089030f02437">
+  <source>Berhasil Menambahkan Story</source>
+  <target>Successfully Added Story</target>
 </trans-unit>
 </body>
 </file>

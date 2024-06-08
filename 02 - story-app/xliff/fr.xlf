@@ -66,10 +66,6 @@
   <source>deskripsi</source>
   <target>description</target>
 </trans-unit>
-<trans-unit id="se889b38b74f47e2d">
-  <source>masukan text minimal 10-125 huruf</source>
-  <target>entrez un texte de 10 à 125 caractères</target>
-</trans-unit>
 <trans-unit id="sd535cd6798034923">
   <source>kirim sebagai</source>
   <target>envoyer en tant que</target>
@@ -106,10 +102,6 @@
   <source>last updated</source>
   <target>dernière mise à jour</target>
 </trans-unit>
-<trans-unit id="s62f49131afb567ec">
-  <source>data tidak ditemukan</source>
-  <target>données non trouvées</target>
-</trans-unit>
 <trans-unit id="sf31e8cf85d601d2a">
   <source>sebelumnya</source>
   <target>précédent</target>
@@ -137,6 +129,74 @@
 <trans-unit id="sa52127387350c01a">
   <source>setel ulang pengaturan</source>
   <target>réinitialiser les paramètres</target>
+</trans-unit>
+<trans-unit id="s45dab30b4d2d3c14">
+  <source>Masuk</source>
+  <target>Connexion</target>
+</trans-unit>
+<trans-unit id="s123467b419acbc07">
+  <source>email</source>
+  <target>email</target>
+</trans-unit>
+<trans-unit id="sa7a70bfb41a338db">
+  <source>kata sandi</source>
+  <target>mot de passe</target>
+</trans-unit>
+<trans-unit id="s7ae24e2336894d23">
+  <source>Belum punya akun?</source>
+  <target>Vous n'avez pas de compte ?</target>
+</trans-unit>
+<trans-unit id="seb832a602c5b48df">
+  <source>daftar</source>
+  <target>Inscription</target>
+</trans-unit>
+<trans-unit id="s3cf0c263cd2dcba3">
+  <source>Sudah punya akun?</source>
+  <target>Vous avez déjà un compte ?</target>
+</trans-unit>
+<trans-unit id="s5a0a1db9e8aa5cda">
+  <source>Akun tidak ditemukan!</source>
+  <target>Compte non trouvé !</target>
+</trans-unit>
+<trans-unit id="sb616cbe958dea2ee">
+  <source>Berhasil Login</source>
+  <target>Connexion réussie</target>
+</trans-unit>
+<trans-unit id="sf41b5558524d0412">
+  <source>Akan dialihkan ke home</source>
+  <target>Redirection vers la page d'accueil</target>
+</trans-unit>
+<trans-unit id="sb1a4bc14542488cb">
+  <source>Gagal mendaftarkan akun!</source>
+  <target>Échec de l'inscription du compte !</target>
+</trans-unit>
+<trans-unit id="s116a8d48166d06f0">
+  <source>Berhasil mendaftarkan akun</source>
+  <target>Inscription réussie</target>
+</trans-unit>
+<trans-unit id="s742c9c23d1339e9a">
+  <source>Akan dialihkan ke halaman login</source>
+  <target>Redirection vers la page de connexion</target>
+</trans-unit>
+<trans-unit id="sd93ff51dd0da1dbf">
+  <source>Daftar</source>
+  <target>Inscription</target>
+</trans-unit>
+<trans-unit id="sc4bcb1ba8e632252">
+  <source>nama</source>
+  <target>nom</target>
+</trans-unit>
+<trans-unit id="s37ee620e44d1533d">
+  <source>masukan text minimal 5-125 huruf</source>
+  <target>Saisissez un texte de 5 à 125 lettres minimum</target>
+</trans-unit>
+<trans-unit id="s1978bd4ba70d2159">
+  <source>Gagal Menambahkah Story</source>
+  <target>Échec de l'ajout de l'histoire</target>
+</trans-unit>
+<trans-unit id="s839a089030f02437">
+  <source>Berhasil Menambahkan Story</source>
+  <target>Ajout de l'histoire réussi</target>
 </trans-unit>
 </body>
 </file>

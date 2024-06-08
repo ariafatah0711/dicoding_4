@@ -1,55 +1,16 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>
-        <%= htmlWebpackPlugin.options.title %> | PicStory
-    </title>
-</head>
+    <title><%= htmlWebpackPlugin.options.title %> | PicStory</title>
+  </head>
 
-<body>
+  <body>
     <main class="min-vh-100 d-flex">
-        <btn-setting></btn-setting>
+      <btn-setting></btn-setting>
 
-        <div class="m-auto container py-5">
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-6 col-lg-4">
-                    <h1 class="text-center">Registrasi</h1>
-
-                    <form id="registerForm" novalidate>
-                        <div id="div-alert"></div>
-
-                        <div class="mb-3">
-                            <label for="validationCustomRecordName" class="form-label">Nama</label>
-                            <input-with-validation type="text" inputId="validationCustomRecordName"
-                                invalidFeedbackMessage="Input Required" required></input-with-validation>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="validationCustomEmail" class="form-label">Email</label>
-                            <input-with-validation type="email" inputId="validationCustomEmail"
-                                invalidFeedbackMessage="Email incorrect" required></input-with-validation>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="validationCustomPassword" class="form-label">Password</label>
-                            <input-with-validation type="password" inputId="validationCustomPassword"
-                                invalidFeedbackMessage="Enter a minimum of 8 letters" required></input-with-validation>
-                        </div>
-
-                        <div class="col-12 text-end">
-                            <btn-submit type="register"></btn-submit>
-                        </div>
-                    </form>
-
-                    <div class="mt-4 text-center">
-                        Sudah punya akun? <a href="/auth/login.html">Login</a>
-                    </div>
-                </div>
-            </div>
+      <register-app class="m-auto container py-5"></register-app>
     </main>
-</body>
-
+  </body>
 </html>

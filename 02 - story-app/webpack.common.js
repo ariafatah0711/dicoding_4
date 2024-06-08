@@ -65,6 +65,13 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       title: 'Pic Story!',
+      filename: 'user/edit-story.html',
+      favicon: path.resolve(__dirname, 'src/public/favicon.png'),
+      template: path.resolve(__dirname, 'src/views/user/edit-story.html'),
+      ...htmlWebpackPluginConfig,
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Pic Story!',
       filename: 'user/dashboard.html',
       favicon: path.resolve(__dirname, 'src/public/favicon.png'),
       template: path.resolve(__dirname, 'src/views/user/dashboard.html'),

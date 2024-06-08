@@ -1,5 +1,6 @@
 import { html, css } from 'lit';
 import LitWithoutShadowDom from '../base/LitWithoutShadowDom';
+import { add } from 'date-fns';
 
 class PostItem extends LitWithoutShadowDom {
   static properties = {
@@ -31,21 +32,6 @@ class PostItem extends LitWithoutShadowDom {
   }
 
   render() {
-    const withLoading = html`
-      ${this.loading
-        ? html`
-            <svg
-              class="bd-placeholder-img img-thumbnail"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="A generic square placeholder image with a white border around it, making it resemble a photograph taken with an old instant camera: 200x200"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            ></svg>
-          `
-        : html` <img src="${this.img}" class="card-img-top" alt="..." /> `}
-    `;
-
     const withoutLoading = html`
       <div class="card-image">
         <img src="${this.img}" class="card-img-top" alt="..." />

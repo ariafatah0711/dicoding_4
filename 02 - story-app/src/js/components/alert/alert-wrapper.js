@@ -14,8 +14,8 @@ class AlertWrapper extends LitWithoutShadowDom {
   }
 
   render() {
-    let message,
-      messgaeAlert = this.message;
+    let message;
+    let messgaeAlert = this.message;
     if (this.type == 'login') {
       message = msg(`Akun tidak ditemukan!`);
     } else if (this.type == 'login-success') {
@@ -26,11 +26,18 @@ class AlertWrapper extends LitWithoutShadowDom {
     } else if (this.type == 'register-success') {
       message = msg(`Berhasil mendaftarkan akun`);
       messgaeAlert = msg(`Akan dialihkan ke halaman login`);
+    } else if (this.type == 'add') {
+      message = msg(`Gagal Menambahkah Story`);
+    } else if (this.type == 'add-success') {
+      message = msg(`Berhasil Menambahkan Story`);
+      messgaeAlert = msg(`Akan dialihkan ke home`);
     }
 
     return html`
       <div
-        class="alert ${this.type == 'register-success' || this.type == 'login-success'
+        class="alert ${this.type == 'register-success' ||
+        this.type == 'login-success' ||
+        this.type == 'add-success'
           ? 'alert-success'
           : 'alert-danger'}"
         role="alert"

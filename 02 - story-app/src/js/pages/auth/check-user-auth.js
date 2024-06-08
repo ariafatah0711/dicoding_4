@@ -14,10 +14,8 @@ const CheckUserAuth = {
       } else {
         this._showLoginMenuOrUserLogMenu(isUserSignedIn);
       }
-    } else {
-      if (!isUserOnAuthPage) {
-        window.location.href = '/auth/login.html';
-      }
+    } else if (!isUserOnAuthPage) {
+      window.location.href = '/auth/login.html';
     }
   },
 

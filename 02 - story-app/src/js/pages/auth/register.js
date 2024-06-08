@@ -29,7 +29,7 @@ const Register = {
     if (this._validateFormData(formData)) {
       try {
         this._showSpinner();
-        const response = await Auth.register({
+        await Auth.register({
           name: formData.name,
           email: formData.email,
           password: formData.password,

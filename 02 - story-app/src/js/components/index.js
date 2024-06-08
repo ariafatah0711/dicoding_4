@@ -1,9 +1,12 @@
 import './header-app';
 import './hero-app';
+import './footer-app';
+
 import './dashboard-app';
 import './setting-app';
 import './account-app';
-import './footer-app';
+import './login-app';
+import './register-app';
 
 // card
 import './card/post-list';

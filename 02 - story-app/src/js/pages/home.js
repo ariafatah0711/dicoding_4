@@ -24,6 +24,7 @@ const Home = {
       this.chunk = sessionStorage.getItem('home') ? sessionStorage.getItem('home') : 0;
       this.totalChunk = chunkedData.length;
       this.data = chunkedData[this.chunk];
+      console.log(this.data);
 
       postListElement.setAttribute('chunk', this.chunk);
       postListElement.setAttribute('totalChunk', this.totalChunk);
@@ -45,7 +46,7 @@ const Home = {
 
     if (this.totalChunk == 1) {
       this.status = 'both';
-    } else if (parseInt(this.chunk) + 1 == this.totalChunk) {
+    } else if (parseInt(this.chunk) + 1 === this.totalChunk) {
       this.status = 'next';
     } else if (this.chunk == 0) {
       this.status = 'prev';
