@@ -9,7 +9,6 @@ class InputWithValidation extends LitWithoutShadowDom {
 
     validFeedbackMessage: { type: String, reflect: true },
     invalidFeedbackMessage: { type: String, reflect: true },
-
     required: { type: Boolean, reflect: true },
   };
 

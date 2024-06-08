@@ -11,26 +11,30 @@
 
 <body>
     <main class="min-vh-100 d-flex">
+        <btn-setting></btn-setting>
+
         <div class="m-auto container py-5">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-6 col-lg-4">
                     <h1 class="text-center">Login</h1>
 
                     <form id="loginForm" novalidate>
+                        <div id="div-alert"></div>
+
                         <div class="mb-3">
                             <label for="validationCustomRecordEmail" class="form-label">Email</label>
                             <input-with-validation type="text" inputId="validationCustomRecordEmail"
-                                invalidFeedbackMessage="Wajib diisi" required></input-with-validation>
+                                invalidFeedbackMessage="email incorrect" required></input-with-validation>
                         </div>
 
                         <div class="mb-3">
                             <label for="validationCustomPassword" class="form-label">Password</label>
                             <input-with-validation type="password" inputId="validationCustomPassword"
-                                invalidFeedbackMessage="Wajib diisi" required></input-with-validation>
+                                invalidFeedbackMessage="Enter a minimum of 8 letters" required></input-with-validation>
                         </div>
 
                         <div class="col-12 text-end">
-                            <button class="btn btn-primary" type="submit">Submit</button>
+                            <btn-submit type="login"></btn-submit>
                         </div>
                     </form>
 

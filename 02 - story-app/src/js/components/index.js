@@ -33,3 +33,10 @@ import './pagination/pagination-reset';
 // selects
 import './selects/select-theme';
 import './selects/select-language';
+
+// alert
+import './alert/alert-wrapper';
+
+// button
+import './button/btn-submit';
+import './button/btn-setting';

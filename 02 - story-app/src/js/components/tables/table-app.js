@@ -138,7 +138,12 @@ class TableApp extends LitWithoutShadowDom {
                   `,
                 )}
               `
-            : html` tidak ada data `}
+            : html`
+                <th scope="row">1.</th>
+                <td class="w-75 w-md-25">
+                  <p class="p-md-wrap">data tidak ada</p>
+                </td>
+              `}
         </tbody>
       </table>
       <table-pagination

@@ -9,7 +9,7 @@ class PostItem extends LitWithoutShadowDom {
     date: { type: String, reflect: true },
     datePostAgo: { type: String, reflect: true },
     loading: { type: Boolean, reflect: true },
-    id: { type: Number, reflect: true },
+    id: { type: String, reflect: true },
   };
 
   static styles = css`

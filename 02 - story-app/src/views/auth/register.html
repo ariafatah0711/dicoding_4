@@ -11,32 +11,36 @@
 
 <body>
     <main class="min-vh-100 d-flex">
+        <btn-setting></btn-setting>
+
         <div class="m-auto container py-5">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-6 col-lg-4">
                     <h1 class="text-center">Registrasi</h1>
 
                     <form id="registerForm" novalidate>
+                        <div id="div-alert"></div>
+
                         <div class="mb-3">
                             <label for="validationCustomRecordName" class="form-label">Nama</label>
                             <input-with-validation type="text" inputId="validationCustomRecordName"
-                                invalidFeedbackMessage="Wajib diisi" required></input-with-validation>
+                                invalidFeedbackMessage="Input Required" required></input-with-validation>
                         </div>
 
                         <div class="mb-3">
                             <label for="validationCustomEmail" class="form-label">Email</label>
                             <input-with-validation type="email" inputId="validationCustomEmail"
-                                invalidFeedbackMessage="Wajib diisi" required></input-with-validation>
+                                invalidFeedbackMessage="Email incorrect" required></input-with-validation>
                         </div>
 
                         <div class="mb-3">
                             <label for="validationCustomPassword" class="form-label">Password</label>
                             <input-with-validation type="password" inputId="validationCustomPassword"
-                                invalidFeedbackMessage="Wajib diisi" required></input-with-validation>
+                                invalidFeedbackMessage="Enter a minimum of 8 letters" required></input-with-validation>
                         </div>
 
                         <div class="col-12 text-end">
-                            <button class="btn btn-primary" type="submit">Submit</button>
+                            <btn-submit type="register"></btn-submit>
                         </div>
                     </form>
 
@@ -45,7 +49,6 @@
                     </div>
                 </div>
             </div>
-        </div>
     </main>
 </body>
 

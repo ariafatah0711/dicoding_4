@@ -6,6 +6,8 @@ import {
   differenceInMonths,
   differenceInWeeks,
   differenceInDays,
+  differenceInHours,
+  differenceInMinutes,
 } from 'date-fns';
 
 class PostList extends LitWithoutShadowDom {
@@ -77,6 +79,8 @@ class PostList extends LitWithoutShadowDom {
     const monthsDifference = differenceInMonths(now, past);
     const weeksDifference = differenceInWeeks(now, past);
     const daysDifference = differenceInDays(now, past);
+    const hoursDifference = differenceInHours(now, past);
+    const minutesDifference = differenceInMinutes(now, past);
 
     let result;
 
@@ -86,8 +90,12 @@ class PostList extends LitWithoutShadowDom {
       result = `${monthsDifference} month${monthsDifference > 1 ? 's' : ''}`;
     } else if (weeksDifference >= 1) {
       result = `${weeksDifference} week${weeksDifference > 1 ? 's' : ''}`;
-    } else {
+    } else if (daysDifference >= 1) {
       result = `${daysDifference} day${daysDifference > 1 ? 's' : ''}`;
+    } else if (hoursDifference >= 1) {
+      result = `${hoursDifference} hour${hoursDifference > 1 ? 's' : ''}`;
+    } else {
+      result = `${minutesDifference} minute${minutesDifference > 1 ? 's' : ''}`;
     }
 
     return result;

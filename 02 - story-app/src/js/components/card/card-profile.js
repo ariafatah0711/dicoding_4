@@ -10,7 +10,7 @@ const text = `class Data:
         print('email saya : ', self.email)
 
 
-data = Data('Aria Fatah', 'ariafatah999@gmail.com')
+data = Data('aria fatah', 'ariafatah@gmail.com')
 
 data.Data()`;
 
@@ -92,6 +92,7 @@ class CardProfile extends LitElement {
       border-radius: 5px;
       backdrop-filter: blur(15px);
       color: var(--card-text-color);
+      text-transform: lowercase;
     }
 
     .card-footer {
