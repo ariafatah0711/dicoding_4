@@ -20,7 +20,7 @@ class LoginApp extends LitWithoutShadowDom {
             <div class="mb-3">
               <label for="validationCustomRecordEmail" class="form-label">${msg(`email`)}</label>
               <input-with-validation
-                type="text"
+                type="email"
                 inputId="validationCustomRecordEmail"
                 invalidFeedbackMessage="email incorrect"
                 required
@@ -29,12 +29,12 @@ class LoginApp extends LitWithoutShadowDom {
 
             <div class="mb-3">
               <label for="validationCustomPassword" class="form-label">${msg(`kata sandi`)}</label>
-              <input-with-validation
+              <input-password-with-validation
                 type="password"
                 inputId="validationCustomPassword"
                 invalidFeedbackMessage="Enter a minimum of 8 letters"
                 required
-              ></input-with-validation>
+              ></input-password-with-validation>
             </div>
 
             <div class="col-12 text-end">

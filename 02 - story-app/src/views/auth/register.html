@@ -1,16 +1,20 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title><%= htmlWebpackPlugin.options.title %> | PicStory</title>
-  </head>
 
-  <body>
-    <main class="min-vh-100 d-flex">
-      <btn-setting></btn-setting>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>
+    <%= htmlWebpackPlugin.options.title %> | PicStory
+  </title>
+</head>
 
-      <register-app class="m-auto container py-5"></register-app>
-    </main>
-  </body>
+<body>
+  <main class="container-fluid flex w-100 pt-3 mt-3">
+    <btn-setting></btn-setting>
+    <hero-app img="/image/hero-register.png"></hero-app>
+    <register-app class="m-auto container py-5"></register-app>
+  </main>
+</body>
+
 </html>

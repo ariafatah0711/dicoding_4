@@ -29,6 +29,7 @@ import './tables/table-pagination';
 import './input/label-account';
 import './input/input-account';
 import './input/input-with-validation';
+import './input/input-password-with-validation';
 
 // pagination
 import './pagination/pagination-reset';

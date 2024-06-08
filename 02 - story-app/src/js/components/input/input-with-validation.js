@@ -33,6 +33,7 @@ class InputWithValidation extends LitWithoutShadowDom {
       <input
         id=${this.inputId || nothing}
         class="form-control"
+        maxlength="20"
         type=${this.type}
         value=${this.value || nothing}
         ?required=${this.required}
