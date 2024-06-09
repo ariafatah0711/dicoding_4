@@ -44,3 +44,6 @@ import './alert/alert-wrapper';
 // button
 import './button/btn-submit';
 import './button/btn-setting';
+
+// spinners
+import './spinners/loading-element';

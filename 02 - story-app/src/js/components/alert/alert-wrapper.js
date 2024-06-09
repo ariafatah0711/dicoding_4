@@ -31,6 +31,8 @@ class AlertWrapper extends LitWithoutShadowDom {
     } else if (this.type == 'add-success') {
       message = msg(`Berhasil Menambahkan Story`);
       messgaeAlert = msg(`Akan dialihkan ke home`);
+    } else if (this.type == 'location') {
+      message = msg(`Gagal Mendapatkan lokasi`);
     }
 
     return html`

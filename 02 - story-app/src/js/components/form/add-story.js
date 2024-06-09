@@ -3,6 +3,7 @@ import LitWithoutShadowDom from '../base/LitWithoutShadowDom';
 import { msg, updateWhenLocaleChanges } from '@lit/localize';
 import Crud from '../../network/crud';
 import Utils from '../../utils/utils';
+import axios from 'axios';
 
 class AddStory extends LitWithoutShadowDom {
   static properties = {
@@ -108,6 +109,15 @@ class AddStory extends LitWithoutShadowDom {
     this.guest = event.target.checked;
   }
 
+  async _reverseGeocode(lat, lon) {
+    const url = `https://api.geoapify.com/v1/geocode/reverse?lat=${lat}&lon=${lon}&apiKey=c8f8cd287fee4e3a813fd6b68e952103`;
+
+    const response = await axios(url);
+    const country = response.data.features[0].properties.country;
+    const city = response.data.features[0].properties.city;
+    alert(country, city);
+  }
+
   async _toggleLocationMode(event) {
     console.log(this.lat);
 
@@ -120,13 +130,15 @@ class AddStory extends LitWithoutShadowDom {
           this.lat = position.coords.latitude;
           this.lon = position.coords.longitude;
           this.location = true;
+
+          // this._reverseGeocode(this.lat, this.lon);
         } catch (error) {
-          console.error('Error getting user location:', error);
+          this._showAllert('location', error.message);
           event.target.checked = false;
           this.location = false;
         }
       } else {
-        console.log('Geolocation is not supported by this browser.');
+        this._showAllert('location', 'Geolocation is not supported by this browser.');
         this.location = false;
       }
     } else {
@@ -144,10 +156,8 @@ class AddStory extends LitWithoutShadowDom {
     let lat = this.lat ? this.lat : null;
     let lon = this.lon ? this.lon : null;
 
-    console.log(lat);
-    console.log(lon);
-
     if (formData.description.length < 5 || formData.description.length > 125) {
+      this._showAllert('add', 'Enter the description text of at least 5-125 letters');
       return;
     }
 
@@ -170,6 +180,8 @@ class AddStory extends LitWithoutShadowDom {
             lon: lon,
           });
         }
+
+        sessionStorage.setItem('home', 0);
         this._goToDashboardPage();
       } catch (error) {
         this._showAllert('add', error.response.data.message);

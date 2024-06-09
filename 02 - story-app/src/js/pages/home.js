@@ -4,6 +4,7 @@ const Home = {
   async init() {
     await this._initialData();
     this._initialListener();
+    this._hideLoading();
   },
 
   _chunkArrayUser(array, chunkSize) {
@@ -34,6 +35,16 @@ const Home = {
     } catch (error) {
       console.error('Error fetching data:', error);
     }
+  },
+
+  _showLoading() {
+    const element = document.querySelector('loading-element');
+    element.classList.remove('d-none');
+  },
+
+  _hideLoading() {
+    const element = document.querySelector('loading-element');
+    element.classList.add('d-none');
   },
 
   _checkStatus() {

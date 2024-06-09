@@ -86,8 +86,8 @@ $dark: #343a40;
 
     img {
       object-fit: cover;
-      object-position: center;
-      transition: all 0.3s ease-in-out;
+      // object-position: center;
+      transition: none;
     }
 
     &:hover img {
