@@ -40,7 +40,7 @@
 2. Navigate to the directory where you want to save this project.
 3. Use the following command to download the project from the GitHub repository:
    ```sh
-   git clone https://github.com/ariafatah0711/dicoding_5.git
+   git clone https://github.com/ariafatah0711/dicoding_4.git
    ```
 4. go to the desired folder
 5. Ensure NodeJS is installed, then run the following command to install npm:
@@ -49,7 +49,7 @@
    ```
 6. Execute the following command to build and run the project:
    ```sh
-   npm run start-dev
+   npm run build:start
    ```
 7. lauch http://localhost:9000/ in web browser
 
@@ -57,7 +57,7 @@
 
 ## 📈 related
 
-<a href="https://ariafatah0711.github.io/dicoding_5/02%20-%20restaurant-apps/dist/" alt="DEMO"><img src="https://img.shields.io/static/v1?style=for-the-badge&label=DEMO-2&message=WEB&color=000000"></a>
+<a href="https://pic-storys.web.app/" alt="DEMO"><img src="https://img.shields.io/static/v1?style=for-the-badge&label=DEMO-2&message=WEB&color=000000"></a>
 
 <p id="license"></p>
 
