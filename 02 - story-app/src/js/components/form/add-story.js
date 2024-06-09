@@ -110,7 +110,8 @@ class AddStory extends LitWithoutShadowDom {
   }
 
   async _reverseGeocode(lat, lon) {
-    const url = `https://api.geoapify.com/v1/geocode/reverse?lat=${lat}&lon=${lon}&apiKey=c8f8cd287fee4e3a813fd6b68e952103`;
+    const key = '';
+    const url = `https://api.geoapify.com/v1/geocode/reverse?lat=${lat}&lon=${lon}&apiKey=${key}`;
 
     const response = await axios(url);
     const country = response.data.features[0].properties.country;
