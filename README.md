@@ -1,4 +1,5 @@
 # dicoding_4
+
 ## Belajar Tools Front-End Web Intermediate
 
 <p align="center">
@@ -12,21 +13,22 @@
 <p id="description"></p>
 
 ## 🚀 Description
-- create by  : ariafatah
-- date-submit: 
+
+- create by : ariafatah
+- date-submit:
 
 <p id="table-of-contents"></p>
 
 ## 📋 Table of Contents
+
 <details>
   <summary><b>Checklist</b></summary>
-  
+
 
 </details>
 
 <details>
   <summary><b>Feature</b></summary>
-
 
 </details>
 
@@ -54,10 +56,11 @@
 <p id="related"></p>
 
 ## 📈 related
+
 <a href="https://ariafatah0711.github.io/dicoding_5/02%20-%20restaurant-apps/dist/" alt="DEMO"><img src="https://img.shields.io/static/v1?style=for-the-badge&label=DEMO-2&message=WEB&color=000000"></a>
 
 <p id="license"></p>
 
 ## ©️ license
-<a href="https://github.com/ariafatah0711" alt="CREATED"><img src="https://img.shields.io/static/v1?style=for-the-badge&label=CREATED%20BY&message=ariafatah0711&color=000000"></a>
-<a href="https://github.com/ariafatah0711/dicoding_4/blob/main/LICENSE" alt="LICENSE"><img src="https://img.shields.io/static/v1?style=for-the-badge&label=LICENSE&message=APACHE&color=000000"></a>
+
+<a href="https://github.com/ariafatah0711" alt="CREATED"><img src="https://img.shields.io/static/v1?style=for-the-badge&label=CREATED%20BY&message=ariafatah0711&color=000000"></a> <a href="https://github.com/ariafatah0711/dicoding_4/blob/main/LICENSE" alt="LICENSE"><img src="https://img.shields.io/static/v1?style=for-the-badge&label=LICENSE&message=APACHE&color=000000"></a>

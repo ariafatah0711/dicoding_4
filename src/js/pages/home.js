@@ -25,7 +25,6 @@ const Home = {
       this.chunk = sessionStorage.getItem('home') ? sessionStorage.getItem('home') : 0;
       this.totalChunk = chunkedData.length;
       this.data = chunkedData[this.chunk];
-      console.log(this.data);
 
       postListElement.setAttribute('chunk', this.chunk);
       postListElement.setAttribute('totalChunk', this.totalChunk);
