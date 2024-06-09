@@ -198,6 +198,14 @@
   <source>Berhasil Menambahkan Story</source>
   <target>ストーリーが正常に追加されました</target>
 </trans-unit>
+<trans-unit id="s62f49131afb567ec">
+  <source>data tidak ditemukan</source>
+  <target>データが見つかりません</target>
+</trans-unit>
+<trans-unit id="s4c9c0860ebbb779a">
+  <source>Gagal Mendapatkan lokasi</source>
+  <target>位置情報の取得に失敗しました</target>
+</trans-unit>
 </body>
 </file>
 </xliff>

@@ -94,7 +94,7 @@ class AddStory extends LitWithoutShadowDom {
     const file = imageInput.files[0];
     const reader = new FileReader();
 
-    reader.onloadend = function () {
+    reader.onloadend = () => {
       previewImage.src = reader.result;
     };
 
@@ -114,8 +114,8 @@ class AddStory extends LitWithoutShadowDom {
     const url = `https://api.geoapify.com/v1/geocode/reverse?lat=${lat}&lon=${lon}&apiKey=${key}`;
 
     const response = await axios(url);
-    const country = response.data.features[0].properties.country;
-    const city = response.data.features[0].properties.city;
+    const { country } = response.data.features[0].properties;
+    const { city } = response.data.features[0].properties;
     alert(country, city);
   }
 
@@ -154,8 +154,8 @@ class AddStory extends LitWithoutShadowDom {
 
   async _sendPost() {
     const formData = this._getFormData();
-    let lat = this.lat ? this.lat : null;
-    let lon = this.lon ? this.lon : null;
+    const lat = this.lat ? this.lat : null;
+    const lon = this.lon ? this.lon : null;
 
     if (formData.description.length < 5 || formData.description.length > 125) {
       this._showAllert('add', 'Enter the description text of at least 5-125 letters');
@@ -170,15 +170,15 @@ class AddStory extends LitWithoutShadowDom {
           await Crud.createStory({
             description: formData.description,
             photo: formData.image,
-            lat: lat,
-            lon: lon,
+            lat,
+            lon,
           });
         } else {
           await Crud.createGuestStory({
             description: formData.description,
             photo: formData.image,
-            lat: lat,
-            lon: lon,
+            lat,
+            lon,
           });
         }
 
